@@ -11,11 +11,13 @@ public class DefendAction : MonoBehaviour
 
     private AIPath _ai;
     private SpriteRenderer _rn;
+    private Animator _an;
 
     void Start()
     {
         _ai = GetComponent<AIPath>();
         _rn = GetComponent<SpriteRenderer>();
+        _an = GetComponent<Animator>();
     }
 
     void Update()
@@ -29,6 +31,15 @@ public class DefendAction : MonoBehaviour
         if (_ai.destination.x > transform.position.x)
         {
             _rn.flipX = false;
+        }
+
+        if (_ai.reachedDestination)
+        {
+            _an.SetBool("isWalking", false);    
+        }
+        else
+        {
+            _an.SetBool("isWalking", true);
         }
     }
 }

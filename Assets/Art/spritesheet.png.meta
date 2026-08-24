@@ -164,9 +164,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-        y: 986
+        y: 987
         width: 10
-        height: 15
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,9 +186,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-        y: 970
+        y: 971
         width: 10
-        height: 15
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,11 +208,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-        y: 954
+        y: 955
         width: 10
-        height: 15
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,11 +230,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-        y: 938
+        y: 939
         width: 10
-        height: 15
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,6 +243,94 @@ TextureImporter:
       bones: []
       spriteID: ebb08d29c1fda6c438aa8418348d88ab
       internalID: -273603074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garf_walk
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 987
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e49fbd9508772648b92bc891e36fe8a
+      internalID: -1780335767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jordgar_walk
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 971
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839b9416d47fc9f4ba278c38529909e3
+      internalID: 2114356311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kai_walk
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 955
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e2e68e0f9e1194e8f0cfe9585f8c20
+      internalID: -436777667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: winter_walk
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 939
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af808c9cb73f1641ac7ed85204ad42d
+      internalID: -1527898079
       vertices: []
       indices: 
       edges: []
@@ -264,9 +352,13 @@ TextureImporter:
       coal_idle: 8020143640844766479
       coal_walk: -6251682230944352461
       garf_idle: 137348925
+      garf_walk: -1780335767
       jordgar_idle: 882363397
+      jordgar_walk: 2114356311
       kai_idle: 712316151
+      kai_walk: -436777667
       winter_idle: -273603074
+      winter_walk: -1527898079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
