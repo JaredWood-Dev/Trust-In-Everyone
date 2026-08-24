@@ -168,7 +168,7 @@ TextureImporter:
         width: 10
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,7 +190,7 @@ TextureImporter:
         width: 10
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,6 +199,50 @@ TextureImporter:
       bones: []
       spriteID: 7bbdd472e6fe6ae4ca3895dbc62e4e47
       internalID: 882363397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kai_idle
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 954
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ae3679e20dabe45a84e12cd9ebe3e0
+      internalID: 712316151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: winter_idle
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 938
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb08d29c1fda6c438aa8418348d88ab
+      internalID: -273603074
       vertices: []
       indices: 
       edges: []
@@ -221,6 +265,8 @@ TextureImporter:
       coal_walk: -6251682230944352461
       garf_idle: 137348925
       jordgar_idle: 882363397
+      kai_idle: 712316151
+      winter_idle: -273603074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
