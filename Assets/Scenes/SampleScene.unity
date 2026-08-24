@@ -1454,6 +1454,7 @@ GameObject:
   - component: {fileID: 1573634774}
   - component: {fileID: 1573634777}
   - component: {fileID: 1573634778}
+  - component: {fileID: 1573634779}
   m_Layer: 7
   m_Name: Jordgar
   m_TagString: Ally
@@ -1727,6 +1728,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   stompParticles: {fileID: 1816791006683328590, guid: ae1f99c4845ade9429244e3ac50c148b, type: 3}
+--- !u!114 &1573634779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573634769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c9760e5d5852545b1c97ab96bace48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedAI
+  aggressionDistance: 2
+  player: {fileID: 1049624305}
 --- !u!1 &1945443558
 GameObject:
   m_ObjectHideFlags: 0

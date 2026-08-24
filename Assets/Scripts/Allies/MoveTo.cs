@@ -1,7 +1,7 @@
 using Pathfinding;
 using UnityEngine;
 
-public class DefendAction : MonoBehaviour
+public class MoveTo : MonoBehaviour
 {
     //The target to defend
     public GameObject target;
