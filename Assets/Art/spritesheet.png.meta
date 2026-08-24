@@ -159,6 +159,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: garf_idle
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 986
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2aea8bc4873f7459b0e058f79510f3
+      internalID: 137348925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jordgar_idle
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 970
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bbdd472e6fe6ae4ca3895dbc62e4e47
+      internalID: 882363397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -175,6 +219,8 @@ TextureImporter:
     nameFileIdTable:
       coal_idle: 8020143640844766479
       coal_walk: -6251682230944352461
+      garf_idle: 137348925
+      jordgar_idle: 882363397
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
