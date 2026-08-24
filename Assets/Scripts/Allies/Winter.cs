@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,8 +10,10 @@ public class Winter : MonoBehaviour, IAlly
     public float attackSpeed;
     public float AttackSpeed { get; set; }
     public float projectileSpeed;
-    
+
     public GameObject projectile;
+    
+    public Attack CharacterAttack { get; set; }
     
     //Winter's attack is firing an ice bolt
     
@@ -34,6 +37,7 @@ public class Winter : MonoBehaviour, IAlly
     void Start()
     {
         AttackSpeed = attackSpeed;
+        CharacterAttack = new WinterAttack(gameObject.GetComponent<AlliedAI>());
     }
 
     void Update()

@@ -38,10 +38,25 @@ public class AlliedAI : MonoBehaviour
     }
 
     //Changes the state to the requested state
-    public void RequestState(AIState newState)
+    public void RequestState(States newState)
     {
         currentState.Exit();
-        currentState = newState;
+        switch (newState)
+        {
+            case States.Defending:
+                currentState = new Defend(this);
+                break;
+            case States.Attacking:
+                if (ally.CharacterAttack != null)
+                {
+                    currentState = ally.CharacterAttack;
+                }
+                else
+                {
+                    currentState = new Attack(this);
+                }
+                break;
+        }
         currentState.Enter();
     }
 }

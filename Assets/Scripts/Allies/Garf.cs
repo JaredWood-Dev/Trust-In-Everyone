@@ -16,6 +16,8 @@ public class Garf : MonoBehaviour, IAlly
     public LayerMask targetLayers;
     public ParticleSystem lightningParticles;
     
+    public Attack CharacterAttack { get; set; }
+
     //Garf's attack is a bolt of lightning
     
     public void Attack()

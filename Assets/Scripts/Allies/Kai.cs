@@ -13,6 +13,8 @@ public class Kai : MonoBehaviour, IAlly
     public float direction;
     public LayerMask targetLayers;
     public ParticleSystem fireParticles;
+    
+    public Attack CharacterAttack { get; set; }
 
     //Kai's attack is a flamethrower / burning hands
     

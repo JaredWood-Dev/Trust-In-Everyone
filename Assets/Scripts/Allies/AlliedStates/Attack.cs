@@ -7,6 +7,11 @@ public class Attack : AIState
     {
         Ai = ai;
     }
+
+    public Attack()
+    {
+        
+    }
     public override void Enter()
     {
         Debug.Log("Begin Attack");
@@ -17,12 +22,12 @@ public class Attack : AIState
         GameObject nearestEnemy = GameObjectLocator.FindNearestWithTag(Ai.player.gameObject, "Enemy");
         if (!nearestEnemy)
         {
-            Ai.RequestState(new Defend(Ai));
+            Ai.RequestState(States.Defending);
         }
         else {
             if (Vector3.Distance(Ai.player.transform.position, nearestEnemy.transform.position) > Ai.aggressionDistance)
             {
-                Ai.RequestState(new Defend(Ai));
+                Ai.RequestState(States.Defending);
             }
             else
             {

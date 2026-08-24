@@ -13,6 +13,8 @@ public class Jordgar : MonoBehaviour, IAlly
 
     public LayerMask targetLayers;
     public ParticleSystem stompParticles;
+    
+    public Attack CharacterAttack { get; set; }
 
     //Jordgar's attack is a seismic stomp
 
