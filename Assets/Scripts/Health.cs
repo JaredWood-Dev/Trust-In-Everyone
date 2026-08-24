@@ -26,6 +26,8 @@ public class Health : MonoBehaviour
         }
         
         _rb = GetComponent<Rigidbody2D>();
+        
+        InvokeRepeating(nameof(Regenerate), regen, regen);
     }
     
     public void ChangeHealth(int changeHealth)
@@ -59,5 +61,10 @@ public class Health : MonoBehaviour
         {
             _rb.AddForce(knockback, ForceMode2D.Impulse);
         }
+    }
+
+    public void Regenerate()
+    {
+        ChangeHealth(1);
     }
 }
