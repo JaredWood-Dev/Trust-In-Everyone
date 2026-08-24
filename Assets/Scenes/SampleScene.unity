@@ -1681,6 +1681,7 @@ GameObject:
   - component: {fileID: 1945443560}
   - component: {fileID: 1945443559}
   - component: {fileID: 1945443566}
+  - component: {fileID: 1945443567}
   m_Layer: 7
   m_Name: Garf
   m_TagString: Ally
@@ -1933,6 +1934,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1945443567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945443558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280db78c4fed2324ca1c0b77ff397166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Garf
+  damage: 0
+  damageType: 0
+  attackSpeed: 0
+  direction: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  lightningParticles: {fileID: 1542637083285365764, guid: b59762f34564e2245abf57b194ec2a5a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

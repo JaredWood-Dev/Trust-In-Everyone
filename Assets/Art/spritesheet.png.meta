@@ -401,6 +401,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: lightning_bolt_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cae1c687e263104ab7c0f9f671367c5
+      internalID: 1971270920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_bolt_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683cf0be25eed334c852f17a1109e0ff
+      internalID: -1741987599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -426,6 +470,8 @@ TextureImporter:
       jordgar_walk: 2114356311
       kai_idle: 712316151
       kai_walk: -436777667
+      lightning_bolt_1: 1971270920
+      lightning_bolt_2: -1741987599
       winter_idle: -273603074
       winter_walk: -1527898079
   mipmapLimitGroupName: 
