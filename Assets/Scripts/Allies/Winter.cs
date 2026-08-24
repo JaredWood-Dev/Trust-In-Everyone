@@ -11,6 +11,8 @@ public class Winter : MonoBehaviour, IAlly
     
     public GameObject projectile;
     
+    //Winter's attack is firing an ice bolt
+    
     public void Attack()
     {
         GameObject target = GameObjectLocator.FindNearestWithTag(gameObject, "Enemy");
