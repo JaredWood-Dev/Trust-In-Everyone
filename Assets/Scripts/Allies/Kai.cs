@@ -6,6 +6,7 @@ public class Kai : MonoBehaviour, IAlly
     public int damage;
     public DamageTypes damageType;
     public float attackSpeed;
+    public float AttackSpeed { get; set; }
     
     //Direction to aim the fire
     [Header("Targeting")]
@@ -39,6 +40,11 @@ public class Kai : MonoBehaviour, IAlly
                 h.Damage(damage, damageType, new Vector2(0, 0));
             }
         }
+    }
+    
+    void Start()
+    {
+        AttackSpeed = attackSpeed;
     }
 
     void Update()

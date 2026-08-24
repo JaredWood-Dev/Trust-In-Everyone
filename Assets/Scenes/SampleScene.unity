@@ -133,9 +133,10 @@ GameObject:
   - component: {fileID: 122988536}
   - component: {fileID: 122988535}
   - component: {fileID: 122988534}
-  - component: {fileID: 122988533}
   - component: {fileID: 122988540}
   - component: {fileID: 122988541}
+  - component: {fileID: 122988542}
+  - component: {fileID: 122988543}
   m_Layer: 7
   m_Name: Kai
   m_TagString: Ally
@@ -143,20 +144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &122988533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122988532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86162af6a9b30a34a9f1247d2f15a74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefendAction
-  target: {fileID: 1049624305}
-  offset: {x: 0, y: -3}
 --- !u!114 &122988534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,12 +389,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Kai
   damage: 10
   damageType: 1
-  attackSpeed: 0
+  attackSpeed: 3
   direction: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
   fireParticles: {fileID: 8241788445714718986, guid: 8b92102969952d740b68183c1df41adc, type: 3}
+--- !u!114 &122988542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122988532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2975e0bf8965a4f9b491079c1df6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedMoveTo
+  allyOffset: {x: 0, y: -3}
+--- !u!114 &122988543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122988532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c9760e5d5852545b1c97ab96bace48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedAI
+  aggressionDistance: 5
+  attackDistance: 3
+  player: {fileID: 1049624305}
+  moveTo: {fileID: 122988542}
 --- !u!1 &464329789
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,9 +438,10 @@ GameObject:
   - component: {fileID: 464329793}
   - component: {fileID: 464329792}
   - component: {fileID: 464329791}
-  - component: {fileID: 464329790}
   - component: {fileID: 464329797}
   - component: {fileID: 464329798}
+  - component: {fileID: 464329799}
+  - component: {fileID: 464329800}
   m_Layer: 7
   m_Name: Winter
   m_TagString: Ally
@@ -432,20 +449,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &464329790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464329789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86162af6a9b30a34a9f1247d2f15a74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefendAction
-  target: {fileID: 1049624305}
-  offset: {x: 3, y: 0}
 --- !u!114 &464329791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,9 +695,38 @@ MonoBehaviour:
   damage: 10
   damageType: 2
   knockback: 10
-  attackSpeed: 0
+  attackSpeed: 1
   projectileSpeed: 20
   projectile: {fileID: 8439924937908018914, guid: 0874b60337725a442903bf073d2edd58, type: 3}
+--- !u!114 &464329799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464329789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2975e0bf8965a4f9b491079c1df6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedMoveTo
+  allyOffset: {x: -3, y: 0}
+--- !u!114 &464329800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464329789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c9760e5d5852545b1c97ab96bace48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedAI
+  aggressionDistance: 6
+  attackDistance: 5
+  player: {fileID: 1049624305}
+  moveTo: {fileID: 464329799}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +960,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &634913116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634913117}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &634913117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634913116}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.77195, y: 0.79673, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1451,10 +1514,10 @@ GameObject:
   - component: {fileID: 1573634770}
   - component: {fileID: 1573634776}
   - component: {fileID: 1573634775}
-  - component: {fileID: 1573634774}
   - component: {fileID: 1573634777}
   - component: {fileID: 1573634778}
   - component: {fileID: 1573634779}
+  - component: {fileID: 1573634780}
   m_Layer: 7
   m_Name: Jordgar
   m_TagString: Ally
@@ -1601,20 +1664,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1573634774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573634769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86162af6a9b30a34a9f1247d2f15a74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefendAction
-  target: {fileID: 1049624305}
-  offset: {x: 0, y: 3}
 --- !u!114 &1573634775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,7 +1771,7 @@ MonoBehaviour:
   damage: 30
   damageType: 0
   knockback: 100
-  attackSpeed: 0
+  attackSpeed: 6
   stompRadius: 5
   targetLayers:
     serializedVersion: 2
@@ -1741,7 +1790,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlliedAI
   aggressionDistance: 2
+  attackDistance: 1
   player: {fileID: 1049624305}
+  moveTo: {fileID: 1573634780}
+--- !u!114 &1573634780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573634769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2975e0bf8965a4f9b491079c1df6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedMoveTo
+  allyOffset: {x: 0, y: 3}
 --- !u!1 &1945443558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,9 +1820,10 @@ GameObject:
   - component: {fileID: 1945443562}
   - component: {fileID: 1945443561}
   - component: {fileID: 1945443560}
-  - component: {fileID: 1945443559}
   - component: {fileID: 1945443566}
   - component: {fileID: 1945443567}
+  - component: {fileID: 1945443568}
+  - component: {fileID: 1945443569}
   m_Layer: 7
   m_Name: Garf
   m_TagString: Ally
@@ -1766,20 +1831,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1945443559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945443558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86162af6a9b30a34a9f1247d2f15a74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DefendAction
-  target: {fileID: 1049624305}
-  offset: {x: -3, y: 0}
 --- !u!114 &1945443560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2023,14 +2074,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280db78c4fed2324ca1c0b77ff397166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Garf
-  damage: 0
-  damageType: 0
-  attackSpeed: 0
+  damage: 5
+  damageType: 3
+  attackSpeed: 5
   direction: 0
   targetLayers:
     serializedVersion: 2
     m_Bits: 256
   lightningParticles: {fileID: 1542637083285365764, guid: b59762f34564e2245abf57b194ec2a5a, type: 3}
+--- !u!114 &1945443568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945443558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2975e0bf8965a4f9b491079c1df6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedMoveTo
+  allyOffset: {x: 3, y: 0}
+--- !u!114 &1945443569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945443558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c9760e5d5852545b1c97ab96bace48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlliedAI
+  aggressionDistance: 5
+  attackDistance: 2
+  player: {fileID: 1049624305}
+  moveTo: {fileID: 1945443568}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2044,3 +2124,4 @@ SceneRoots:
   - {fileID: 464329796}
   - {fileID: 1082075609}
   - {fileID: 1173886189}
+  - {fileID: 634913117}

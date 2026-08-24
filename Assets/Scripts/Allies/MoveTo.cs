@@ -3,13 +3,7 @@ using UnityEngine;
 
 public class MoveTo : MonoBehaviour
 {
-    //The target to defend
-    public GameObject target;
-    
-    //The offset of the target's position to move to
-    public Vector2 offset;
-
-    private AIPath _ai;
+    protected AIPath _ai;
     private SpriteRenderer _rn;
     private Animator _an;
 
@@ -22,7 +16,6 @@ public class MoveTo : MonoBehaviour
 
     void Update()
     {
-        _ai.destination = target.transform.position + (Vector3)offset;
         if (_ai.destination.x < transform.position.x)
         {
             _rn.flipX = true;
@@ -41,5 +34,15 @@ public class MoveTo : MonoBehaviour
         {
             _an.SetBool("isWalking", true);
         }
+    }
+
+    public void SetDestination(Vector2 destination)
+    {
+        _ai.destination = destination;
+    }
+
+    public virtual void SetDestination(GameObject obj)
+    {
+        _ai.destination = obj.transform.position;
     }
 }

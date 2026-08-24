@@ -7,6 +7,7 @@ public class Winter : MonoBehaviour, IAlly
     public DamageTypes damageType;
     public float knockback;
     public float attackSpeed;
+    public float AttackSpeed { get; set; }
     public float projectileSpeed;
     
     public GameObject projectile;
@@ -28,6 +29,11 @@ public class Winter : MonoBehaviour, IAlly
         projectileScript.damageType = damageType;
         projectileScript.knockback = knockback;
         projectileScript.velocity = projectileVelocity;
+    }
+    
+    void Start()
+    {
+        AttackSpeed = attackSpeed;
     }
 
     void Update()

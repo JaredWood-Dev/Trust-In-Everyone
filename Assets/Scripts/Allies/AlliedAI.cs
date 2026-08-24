@@ -7,12 +7,16 @@ public class AlliedAI : MonoBehaviour
 {
     //State machine that controls the allied AI
     public float aggressionDistance;
+    public float attackDistance;
 
     public GameObject player;
     public IAlly ally;
+    public MoveTo moveTo;
     
-    [Serialize]
-    public AIState currentState;
+    
+    private AIState currentState;
+    [NonSerialized]
+    public float AttackTimer;
 
     void Start()
     {
@@ -21,6 +25,7 @@ public class AlliedAI : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player");
         ally = GetComponent<IAlly>();
+        moveTo = GetComponent<MoveTo>();
     }
 
     void Update()
@@ -28,6 +33,8 @@ public class AlliedAI : MonoBehaviour
         print("Current State: " + currentState);
         //Trigger the state's update
         currentState.Update();
+        
+        AttackTimer += Time.deltaTime;
     }
 
     //Changes the state to the requested state

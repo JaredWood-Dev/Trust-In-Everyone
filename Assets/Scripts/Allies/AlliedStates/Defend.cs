@@ -15,10 +15,14 @@ public class Defend : AIState
     public override void Update()
     {
         Debug.Log("defending");
+        Ai.moveTo.SetDestination(Ai.player);
         GameObject nearestEnemy = GameObjectLocator.FindNearestWithTag(Ai.player.gameObject, "Enemy");
-        if (Vector3.Distance(Ai.player.transform.position, nearestEnemy.transform.position) < Ai.aggressionDistance)
+        if (nearestEnemy)
         {
-            Ai.RequestState(new Attack(Ai));
+            if (Vector3.Distance(Ai.player.transform.position, nearestEnemy.transform.position) < Ai.aggressionDistance)
+            {
+                Ai.RequestState(new Attack(Ai));
+            }
         }
     }
 

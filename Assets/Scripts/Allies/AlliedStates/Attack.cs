@@ -14,15 +14,26 @@ public class Attack : AIState
 
     public override void Update()
     {
-        Debug.Log("attacking");
         GameObject nearestEnemy = GameObjectLocator.FindNearestWithTag(Ai.player.gameObject, "Enemy");
-        if (Vector3.Distance(Ai.player.transform.position, nearestEnemy.transform.position) > Ai.aggressionDistance)
+        if (!nearestEnemy)
         {
             Ai.RequestState(new Defend(Ai));
         }
-        else
-        {
-            Ai.ally.Attack();
+        else {
+            if (Vector3.Distance(Ai.player.transform.position, nearestEnemy.transform.position) > Ai.aggressionDistance)
+            {
+                Ai.RequestState(new Defend(Ai));
+            }
+            else
+            {
+                Ai.moveTo.SetDestination(nearestEnemy.transform.position);
+                if (Vector3.Distance(Ai.gameObject.transform.position, nearestEnemy.transform.position) <
+                    Ai.aggressionDistance && Ai.AttackTimer > Ai.ally.AttackSpeed)
+                {
+                    Ai.ally.Attack();
+                    Ai.AttackTimer = 0;
+                }
+            }
         }
     }
 

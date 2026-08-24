@@ -8,6 +8,7 @@ public class Jordgar : MonoBehaviour, IAlly
     public DamageTypes damageType;
     public float knockback;
     public float attackSpeed;
+    public float AttackSpeed { get; set; }
     public float stompRadius;
 
     public LayerMask targetLayers;
@@ -30,6 +31,11 @@ public class Jordgar : MonoBehaviour, IAlly
                 h.Damage(damage, damageType, knockbackVector);
             }
         }
+    }
+    
+    void Start()
+    {
+        AttackSpeed = attackSpeed;
     }
 
     private void Update()

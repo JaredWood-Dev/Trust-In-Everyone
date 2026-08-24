@@ -8,7 +8,8 @@ public class Garf : MonoBehaviour, IAlly
     public int damage;
     public DamageTypes damageType;
     public float attackSpeed;
-    
+    public float AttackSpeed { get; set; }
+
     //Direction to aim the bolt
     [Header("Targeting")]
     public float direction;
@@ -42,6 +43,11 @@ public class Garf : MonoBehaviour, IAlly
                 h.Damage(damage, damageType, new Vector2(0, 0));
             }
         }
+    }
+
+    void Start()
+    {
+        AttackSpeed = attackSpeed;
     }
 
     void Update()

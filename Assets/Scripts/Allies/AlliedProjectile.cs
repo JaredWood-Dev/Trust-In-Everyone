@@ -13,6 +13,7 @@ public class AlliedProjectile : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        Invoke(nameof(DestroyProjectile), 2f);
     }
 
     private void Update()
@@ -28,5 +29,10 @@ public class AlliedProjectile : MonoBehaviour
             collision.gameObject.GetComponent<Health>().Damage(damage, damageType, velocity.normalized * knockback);
             Destroy(gameObject);
         }
+    }
+
+    void DestroyProjectile()
+    {
+        Destroy(gameObject);
     }
 }
