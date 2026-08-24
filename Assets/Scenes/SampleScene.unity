@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 464329791}
   - component: {fileID: 464329790}
   - component: {fileID: 464329797}
+  - component: {fileID: 464329798}
   m_Layer: 7
   m_Name: Winter
   m_TagString: Ally
@@ -676,6 +677,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &464329798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464329789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2589a7228f6694945b0f1b8810a649e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Winter
+  damage: 10
+  damageType: 2
+  knockback: 10
+  attackSpeed: 0
+  projectileSpeed: 20
+  projectile: {fileID: 8439924937908018914, guid: 0874b60337725a442903bf073d2edd58, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1436,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1573634769
 GameObject:
   m_ObjectHideFlags: 0
