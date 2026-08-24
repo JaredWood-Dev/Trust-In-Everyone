@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 122988534}
   - component: {fileID: 122988533}
   - component: {fileID: 122988540}
+  - component: {fileID: 122988541}
   m_Layer: 7
   m_Name: Kai
   m_TagString: Ally
@@ -387,6 +388,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &122988541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122988532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bad64da0f56a4346b8874035caabf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kai
+  damage: 10
+  damageType: 1
+  attackSpeed: 0
+  direction: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  fireParticles: {fileID: 8241788445714718986, guid: 8b92102969952d740b68183c1df41adc, type: 3}
 --- !u!1 &464329789
 GameObject:
   m_ObjectHideFlags: 0
