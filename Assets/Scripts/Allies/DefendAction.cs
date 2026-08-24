@@ -10,14 +10,25 @@ public class DefendAction : MonoBehaviour
     public Vector2 offset;
 
     private AIPath _ai;
+    private SpriteRenderer _rn;
 
     void Start()
     {
         _ai = GetComponent<AIPath>();
+        _rn = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         _ai.destination = target.transform.position + (Vector3)offset;
+        if (_ai.destination.x < transform.position.x)
+        {
+            _rn.flipX = true;
+        }
+
+        if (_ai.destination.x > transform.position.x)
+        {
+            _rn.flipX = false;
+        }
     }
 }
