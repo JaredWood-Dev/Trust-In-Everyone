@@ -718,7 +718,7 @@ TextureImporter:
         width: 8
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -740,7 +740,7 @@ TextureImporter:
         width: 5
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -762,7 +762,7 @@ TextureImporter:
         width: 5
         height: 3
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -771,6 +771,50 @@ TextureImporter:
       bones: []
       spriteID: 06782e5786fabd64bb32550b952bca46
       internalID: 580243438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earthmonster_idle
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 919
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89548f7dfd42c6247b966d8950f196f5
+      internalID: -491128935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_monster_walk
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 919
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efa1f0d3b387c7409037a4a7d28ad40
+      internalID: -1661760305
       vertices: []
       indices: 
       edges: []
@@ -797,6 +841,8 @@ TextureImporter:
       earth_chunk_1: 1853041008
       earth_chunk_2: 1022225776
       earth_chunk_3: 580243438
+      earth_monster_walk: -1661760305
+      earthmonster_idle: -491128935
       fire_1: -863196853
       fire_2: -1054524345
       fire_3: 979608461

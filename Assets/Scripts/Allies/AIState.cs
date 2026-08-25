@@ -3,11 +3,18 @@ using UnityEngine;
 public abstract class AIState
 {
     //Abstract class that represents different states the allied AI can be in
+    //TODO: replace with inheritence based system
     protected AlliedAI Ai;
+    protected EnemyAI EAi;
 
     protected AIState(AlliedAI ai)
     {
         Ai = ai;
+    }
+
+    protected AIState(EnemyAI ai)
+    {
+        EAi = ai;
     }
 
     protected AIState()

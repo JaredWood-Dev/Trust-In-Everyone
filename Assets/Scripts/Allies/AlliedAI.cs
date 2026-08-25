@@ -30,7 +30,6 @@ public class AlliedAI : MonoBehaviour
 
     void Update()
     {
-        print("Current State: " + currentState);
         //Trigger the state's update
         currentState.Update();
         

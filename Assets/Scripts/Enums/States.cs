@@ -1,5 +1,8 @@
 ﻿public enum States
 {
     Defending,
-    Attacking
+    Attacking,
+    EnemySearching,
+    EnemyFollowing,
+    EnemyAttacking
 }

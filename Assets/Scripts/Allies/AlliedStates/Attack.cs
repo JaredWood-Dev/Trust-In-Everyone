@@ -14,7 +14,7 @@ public class Attack : AIState
     }
     public override void Enter()
     {
-        Debug.Log("Begin Attack");
+        
     }
 
     public override void Update()
@@ -44,6 +44,6 @@ public class Attack : AIState
 
     public override void Exit()
     {
-        Debug.Log("End Attack");
+        
     }
 }
