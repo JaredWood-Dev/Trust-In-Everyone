@@ -22,5 +22,11 @@ public class EnemyFollow : AIState
         {
             EAi.RequestState(States.EnemyAttacking);
         }
+
+        GameObject closestAlly = GameObjectLocator.FindNearestWithTag(EAi.gameObject, "Ally");
+        if (Vector3.Distance(EAi.transform.position, closestAlly.transform.position) > EAi.aggressionDistance)
+        {
+            EAi.RequestState(States.EnemySearching);
+        }
     }
 }

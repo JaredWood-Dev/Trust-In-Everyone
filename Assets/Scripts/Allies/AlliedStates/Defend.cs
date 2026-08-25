@@ -9,17 +9,16 @@ public class Defend : AIState
     }
     public override void Enter()
     {
-        Debug.Log("Begin Defend");
+       
     }
 
     public override void Update()
     {
-        Debug.Log("defending");
         Ai.moveTo.SetDestination(Ai.player);
         GameObject nearestEnemy = GameObjectLocator.FindNearestWithTag(Ai.player.gameObject, "Enemy");
         if (nearestEnemy)
         {
-            if (Vector3.Distance(Ai.player.transform.position, nearestEnemy.transform.position) < Ai.aggressionDistance)
+            if (Vector3.Distance(Ai.gameObject.transform.position, nearestEnemy.transform.position) < Ai.aggressionDistance)
             {
                 Ai.RequestState(States.Attacking);
             }
@@ -28,6 +27,6 @@ public class Defend : AIState
 
     public override void Exit()
     {
-        Debug.Log("End Defend");
+        
     }
 }

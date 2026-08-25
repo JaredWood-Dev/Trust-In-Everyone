@@ -19,13 +19,17 @@ public class Attack : AIState
 
     public override void Update()
     {
+        if (Vector3.Distance(Ai.gameObject.transform.position, Ai.player.transform.position) > Ai.returnDistance)
+        {
+            Ai.RequestState(States.Defending);
+        }
         GameObject nearestEnemy = GameObjectLocator.FindNearestWithTag(Ai.player.gameObject, "Enemy");
         if (!nearestEnemy)
         {
             Ai.RequestState(States.Defending);
         }
         else {
-            if (Vector3.Distance(Ai.player.transform.position, nearestEnemy.transform.position) > Ai.aggressionDistance)
+            if (Vector3.Distance(Ai.gameObject.transform.position, nearestEnemy.transform.position) > Ai.aggressionDistance)
             {
                 Ai.RequestState(States.Defending);
             }
@@ -33,7 +37,7 @@ public class Attack : AIState
             {
                 Ai.moveTo.SetDestination(nearestEnemy.transform.position);
                 if (Vector3.Distance(Ai.gameObject.transform.position, nearestEnemy.transform.position) <
-                    Ai.aggressionDistance && Ai.AttackTimer > Ai.ally.AttackSpeed)
+                    Ai.attackDistance && Ai.AttackTimer > Ai.ally.AttackSpeed)
                 {
                     Ai.ally.Attack();
                     Ai.AttackTimer = 0;

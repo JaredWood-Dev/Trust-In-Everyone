@@ -1,17 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemySearch : AIState
+public class CultistSearch : EnemySearch
 {
-    //In enemy search, the enemies slowly wanted toward Coal
+    //Cultist search is same as enemy search, but the cultists will always target Coal
 
-    public EnemySearch(EnemyAI ai)
+    public CultistSearch(EnemyAI ai)
     {
         EAi = ai;
-    }
-
-    public EnemySearch()
-    {
-        
     }
     
     public override void Update()
@@ -26,7 +21,7 @@ public class EnemySearch : AIState
             if (Vector3.Distance(EAi.gameObject.transform.position, closestAlly.transform.position) <
                 EAi.aggressionDistance)
             {
-                EAi.target = closestAlly;
+                EAi.target = EAi.player;
                 EAi.RequestState(States.EnemyFollowing);
             }
         }

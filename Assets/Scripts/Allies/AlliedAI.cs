@@ -8,6 +8,7 @@ public class AlliedAI : MonoBehaviour
     //State machine that controls the allied AI
     public float aggressionDistance;
     public float attackDistance;
+    public float returnDistance = 15; //distance that allies return to coal
 
     public GameObject player;
     public IAlly ally;

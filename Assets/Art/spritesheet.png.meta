@@ -784,7 +784,7 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -806,7 +806,7 @@ TextureImporter:
         width: 13
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -815,6 +815,50 @@ TextureImporter:
       bones: []
       spriteID: 7efa1f0d3b387c7409037a4a7d28ad40
       internalID: -1661760305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cultist_idle
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 899
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad00ac944bb885c45be369af6272b485
+      internalID: 1304923321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cultist_walk
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 899
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5726d421717a8346875014b2d271f5d
+      internalID: -1790345250
       vertices: []
       indices: 
       edges: []
@@ -838,6 +882,8 @@ TextureImporter:
       axe_slash_3: -1035598830
       coal_idle: 8020143640844766479
       coal_walk: -6251682230944352461
+      cultist_idle: 1304923321
+      cultist_walk: -1790345250
       earth_chunk_1: 1853041008
       earth_chunk_2: 1022225776
       earth_chunk_3: 580243438

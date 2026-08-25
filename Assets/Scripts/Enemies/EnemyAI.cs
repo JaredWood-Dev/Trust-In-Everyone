@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour
     public float attackSpeed = 1;
     public float knockback = 10;
     public DamageTypes damageType;
+    
+    public bool isCultist = false; //TODO: CHANGE LATER
 
     public GameObject player;
     public GameObject target;
@@ -26,10 +28,12 @@ public class EnemyAI : MonoBehaviour
 
         //default state
         _currentState = new EnemySearch(this);
+        if (isCultist) _currentState = new CultistSearch(this);
     }
 
     private void Update()
     {
+        print(_currentState);
         _currentState.Update();
         
         AttackTimer += Time.deltaTime;
@@ -37,6 +41,7 @@ public class EnemyAI : MonoBehaviour
 
     public void RequestState(States state)
     {
+        print(state);
         _currentState.Exit();
         switch (state)
         {
@@ -47,7 +52,7 @@ public class EnemyAI : MonoBehaviour
                 _currentState = new EnemyFollow(this);
                 break;
             case States.EnemySearching:
-                _currentState = new EnemySearch(this);
+                _currentState = new CultistSearch(this);
                 break;
         }
         _currentState.Enter();
