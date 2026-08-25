@@ -10,6 +10,9 @@ public class WaveManager : MonoBehaviour
     public int currentWaveIndex = 0;
     public bool isOver = false;
 
+    [Header("Spawning")] 
+    public Vector2[] spawnPositions;
+
     void Update()
     {
         countdown -= Time.deltaTime;
@@ -32,7 +35,8 @@ public class WaveManager : MonoBehaviour
     {
         foreach (EnemyAI enemy in waves[currentWaveIndex].enemies)
         {
-            GameObject e = Instantiate(enemy.gameObject);
+            Vector2 randomSpawn = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)];
+            GameObject e = Instantiate(enemy.gameObject, randomSpawn, Quaternion.identity);
             
             yield return new WaitForSeconds(timeToNextEnemy);
         }
