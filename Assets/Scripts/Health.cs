@@ -47,6 +47,7 @@ public class Health : MonoBehaviour
     
     public void Damage(int damage, DamageTypes damageType, Vector2 knockback)
     {
+        EventManager.CreatureHit(gameObject, null, damage, damageType);
         //If resistant, take half damage
         if (Resistances.Contains(damageType))
         {
