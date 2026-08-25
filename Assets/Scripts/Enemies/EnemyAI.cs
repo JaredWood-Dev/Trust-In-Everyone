@@ -33,7 +33,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        print(_currentState);
         _currentState.Update();
         
         AttackTimer += Time.deltaTime;
@@ -41,7 +40,6 @@ public class EnemyAI : MonoBehaviour
 
     public void RequestState(States state)
     {
-        print(state);
         _currentState.Exit();
         switch (state)
         {

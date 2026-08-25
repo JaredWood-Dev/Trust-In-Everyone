@@ -23,7 +23,6 @@ public class AlliedProjectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        print("collision");
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Health>().Damage(damage, damageType, velocity.normalized * knockback);
