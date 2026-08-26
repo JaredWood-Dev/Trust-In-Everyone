@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class WaveManager : MonoBehaviour
     public float timeToNextEnemy = 0.5f;
     public int currentWaveIndex = 0;
     public bool isOver = false;
+    public int enemyCount;
+    public int totalEnemyCount;
 
     [Header("Spawning")] 
     public Vector2[] spawnPositions;
@@ -20,7 +23,7 @@ public class WaveManager : MonoBehaviour
         if (countdown <= 0 && !isOver)
         {
             countdown = timeToNextWave;
-            StartCoroutine(SpawnWave());
+            //StartCoroutine(SpawnWave());
         }
 
         if (currentWaveIndex > waves.Length - 1)
@@ -33,14 +36,37 @@ public class WaveManager : MonoBehaviour
 
     public IEnumerator SpawnWave()
     {
+        totalEnemyCount = waves[currentWaveIndex].enemies.Length;
+        
         foreach (EnemyAI enemy in waves[currentWaveIndex].enemies)
         {
             Vector2 randomSpawn = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)];
             GameObject e = Instantiate(enemy.gameObject, randomSpawn, Quaternion.identity);
+            enemyCount++;
             
             yield return new WaitForSeconds(timeToNextEnemy);
         }
         currentWaveIndex++;
+    }
+
+    public void StartWave()
+    {
+        StartCoroutine(SpawnWave());
+    }
+
+    public void EnemyKilled(GameObject target, GameObject killer)
+    {
+        enemyCount--;
+    }
+
+    private void OnEnable()
+    {
+        EventManager.OnEnemyDeath += EnemyKilled;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnEnemyDeath += EnemyKilled;
     }
 }
 

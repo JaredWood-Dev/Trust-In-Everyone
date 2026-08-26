@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     public GameObject ally4Container;
     public Color barColor4;
     private Image _bar4Image;
+
+    public TMP_Text waveCounter;
+    public TMP_Text remainingCounter;
+    public GameObject nextWaveButton;
+    private WaveManager _waveManager;
     
     void CreatureHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
     {
@@ -70,6 +75,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        _waveManager = GameObject.FindGameObjectWithTag("Wave Manager").GetComponent<WaveManager>();
+        
         _plrHealth = player.GetComponent<Health>();
         _1Health = slot1.GetComponent<Health>();
         _2Health = slot2.GetComponent<Health>();
@@ -102,16 +109,35 @@ public class GameManager : MonoBehaviour
         _bar3Image.fillAmount = ally3percent;
         float ally4percent = (float)_4Health.health / _4Health.maxHealth;
         _bar4Image.fillAmount = ally4percent;
+
+        waveCounter.text = _waveManager.currentWaveIndex.ToString();
+        remainingCounter.text = _waveManager.enemyCount.ToString();
+    }
+
+    void EnemyDied(GameObject target, GameObject killer)
+    {
+        if (_waveManager.enemyCount <= 1)
+        {
+            nextWaveButton.SetActive(true);
+        }
+    }
+
+    public void TriggerWave()
+    {
+        nextWaveButton.SetActive(false);
+        _waveManager.StartWave();
     }
     
     void OnEnable()
     {
-        EventManager.OnCreatureHit += CreatureHit;    
+        EventManager.OnCreatureHit += CreatureHit;
+        EventManager.OnEnemyDeath += EnemyDied;
     }
 
     void OnDisable()
     {
         EventManager.OnCreatureHit -= CreatureHit;
+        EventManager.OnEnemyDeath -= EnemyDied;
     }
     
 }

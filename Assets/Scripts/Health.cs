@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
         else if (health + changeHealth < 0)
         {
             //TODO: REPLACE LATER
-            Destroy(gameObject);
+            KillCreature();
         }
         else
         {
@@ -91,5 +91,14 @@ public class Health : MonoBehaviour
     public void ResetMaterial()
     {
         _sr.material = _defaultMaterial;
+    }
+
+    public void KillCreature()
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            EventManager.EnemyKilled(gameObject, null);
+        }
+        Destroy(gameObject);
     }
 }
