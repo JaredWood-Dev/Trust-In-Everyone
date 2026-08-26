@@ -1,17 +1,39 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
+    private Health _plrHealth;
     
     [Header("Ally Slots")]
     public GameObject slot1;
+    private Health _1Health;
     public GameObject slot2;
+    private Health _2Health;
     public GameObject slot3;
+    private Health _3Health;
     public GameObject slot4;
+    private Health _4Health;
 
     public GameObject damageIndicator;
+
+    [Header("UI Elements")]
+    public Image healthBar;
+    public GameObject ally1Container;
+    public Color barColor1;
+    private Image _bar1Image;
+    public GameObject ally2Container;
+    public Color barColor2;
+    private Image _bar2Image;
+    public GameObject ally3Container;
+    public Color barColor3;
+    private Image _bar3Image;
+    public GameObject ally4Container;
+    public Color barColor4;
+    private Image _bar4Image;
     
     void CreatureHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
     {
@@ -44,7 +66,43 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        _plrHealth = player.GetComponent<Health>();
+        _1Health = slot1.GetComponent<Health>();
+        _2Health = slot2.GetComponent<Health>();
+        _3Health = slot3.GetComponent<Health>();
+        _4Health = slot4.GetComponent<Health>();
+        
+        //assign bar image refernces
+        _bar1Image = ally1Container.transform.GetChild(1).GetChild(0).GetComponent<Image>();
+        _bar2Image = ally2Container.transform.GetChild(1).GetChild(0).GetComponent<Image>();
+        _bar3Image = ally3Container.transform.GetChild(1).GetChild(0).GetComponent<Image>();
+        _bar4Image = ally4Container.transform.GetChild(1).GetChild(0).GetComponent<Image>();
+        
+        //assign bar colors
+        _bar1Image.color = barColor1;
+        _bar2Image.color = barColor2;
+        _bar3Image.color = barColor3;
+        _bar4Image.color = barColor4;
+    }
+
+    void Update()
+    {
+        float healthPercent = (float)_plrHealth.health / _plrHealth.maxHealth;
+        healthBar.fillAmount = healthPercent;
+        
+        float ally1percent = (float)_1Health.health / _1Health.maxHealth;
+        _bar1Image.fillAmount = ally1percent;
+        float ally2percent = (float)_2Health.health / _2Health.maxHealth;
+        _bar2Image.fillAmount = ally2percent;
+        float ally3percent = (float)_3Health.health / _3Health.maxHealth;
+        _bar3Image.fillAmount = ally3percent;
+        float ally4percent = (float)_4Health.health / _4Health.maxHealth;
+        _bar4Image.fillAmount = ally4percent;
+    }
     
     void OnEnable()
     {
