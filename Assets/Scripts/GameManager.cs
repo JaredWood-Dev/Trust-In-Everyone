@@ -24,15 +24,19 @@ public class GameManager : MonoBehaviour
     [Header("UI Elements")]
     public Image healthBar;
     public GameObject ally1Container;
+    private Image _ally1Image;
     public Color barColor1;
     private Image _bar1Image;
     public GameObject ally2Container;
+    private Image _ally2Image;
     public Color barColor2;
     private Image _bar2Image;
     public GameObject ally3Container;
+    private Image _ally3Image;
     public Color barColor3;
     private Image _bar3Image;
     public GameObject ally4Container;
+    private Image _ally4Image;
     public Color barColor4;
     private Image _bar4Image;
 

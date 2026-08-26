@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 
 public class Jordgar : MonoBehaviour, IAlly
 {
-    public int damage;
-    public DamageTypes damageType;
-    public float knockback;
-    public float attackSpeed;
+    public int Damage { get; set; }
+    public DamageTypes DamageType { get; set; }
+    
     public float AttackSpeed { get; set; }
+    public float knockback;
     public float stompRadius;
 
     public LayerMask targetLayers;
@@ -30,14 +30,13 @@ public class Jordgar : MonoBehaviour, IAlly
             if (h)
             {
                 Vector2 knockbackVector = ((Vector2)target.transform.position - (Vector2)transform.position) * knockback;
-                h.Damage(damage, damageType, knockbackVector);
+                h.Damage(Damage, DamageType, knockbackVector);
             }
         }
     }
     
     void Start()
     {
-        AttackSpeed = attackSpeed;
     }
 
     private void Update()

@@ -48,6 +48,8 @@ public class MoveTo : MonoBehaviour
 
     public void SetSpeed(float speed)
     {
-        _ai.maxSpeed = speed;
+        _ai = GetComponent<AIPath>();
+        if (_ai)
+            _ai.maxSpeed = speed;
     }
 }

@@ -50,7 +50,8 @@ public class WaveManager : MonoBehaviour
 
     public void StartWave()
     {
-        StartCoroutine(SpawnWave());
+        if (currentWaveIndex < waves.Length - 1)
+            StartCoroutine(SpawnWave());
     }
 
     public void EnemyKilled(GameObject target, GameObject killer)

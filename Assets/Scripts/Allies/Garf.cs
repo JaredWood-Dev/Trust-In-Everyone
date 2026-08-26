@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,9 +6,8 @@ using UnityEngine.InputSystem;
 public class Garf : MonoBehaviour, IAlly
 {
 
-    public int damage;
-    public DamageTypes damageType;
-    public float attackSpeed;
+    public int Damage { get; set; }
+    public DamageTypes DamageType { get; set; }
     public float AttackSpeed { get; set; }
 
     //Direction to aim the bolt
@@ -44,14 +44,13 @@ public class Garf : MonoBehaviour, IAlly
             Health h = t.GetComponent<Health>();
             if (h)
             {
-                h.Damage(damage, damageType, new Vector2(0, 0));
+                h.Damage(Damage, DamageType, new Vector2(0, 0));
             }
         }
     }
 
     void Start()
     {
-        AttackSpeed = attackSpeed;
         CharacterAttack = new GarfAttack(gameObject.GetComponent<AlliedAI>());
     }
 
