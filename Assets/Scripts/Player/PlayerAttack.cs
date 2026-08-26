@@ -28,7 +28,8 @@ public class PlayerAttack : MonoBehaviour
         {
             //Damage Targets
             RaycastHit2D[] targets;
-            targets = _rn.flipX ? Physics2D.BoxCastAll(transform.position + new Vector3(-1, 0, 0), Vector2.one, 0, Vector2.zero, 0, targetLayers) : Physics2D.BoxCastAll(transform.position + new Vector3(1, 0, 0), Vector2.one, 0, Vector2.zero, 0, targetLayers);
+            Vector2 boxSize = new Vector2(2, 2);
+            targets = _rn.flipX ? Physics2D.BoxCastAll(transform.position + new Vector3(-1, 0, 0), boxSize, 0, Vector2.zero, 0, targetLayers) : Physics2D.BoxCastAll(transform.position + new Vector3(1, 0, 0), boxSize, 0, Vector2.zero, 0, targetLayers);
             foreach (RaycastHit2D hit in targets)
             {
                 Vector2 knockback = -(transform.position - hit.transform.position).normalized * knockbackStrength;
@@ -39,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
             }
             
             //Play Animation
-            ParticleSystem system = Instantiate(particles, transform.position, Quaternion.identity);
+            ParticleSystem system = Instantiate(particles, gameObject.transform);
             system.transform.position = _rn.flipX ? transform.position + new Vector3(-1, 0, 0) : transform.position + new Vector3(1, 0, 0);
 
             if (_rn.flipX)

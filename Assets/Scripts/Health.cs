@@ -8,13 +8,19 @@ public class Health : MonoBehaviour
     public int maxHealth;
     public int regen;
     
+    public ParticleSystem hitParticles;
+    public Material hitFlash;
+    private Material _defaultMaterial;
+    
+    
     [NonSerialized]
     public HashSet<DamageTypes> Resistances = new HashSet<DamageTypes>();
     [SerializeField]
     public List<DamageTypes> DamageResistances = new List<DamageTypes>();
 
     private Rigidbody2D _rb;
-
+    private SpriteRenderer _sr;
+    
     void Start()
     {
         
@@ -26,6 +32,9 @@ public class Health : MonoBehaviour
         }
         
         _rb = GetComponent<Rigidbody2D>();
+        _sr = GetComponent<SpriteRenderer>();
+        
+        _defaultMaterial = GetComponent<SpriteRenderer>().material;
         
         InvokeRepeating(nameof(Regenerate), regen, regen);
     }
@@ -48,6 +57,16 @@ public class Health : MonoBehaviour
     public void Damage(int damage, DamageTypes damageType, Vector2 knockback)
     {
         EventManager.CreatureHit(gameObject, null, damage, damageType);
+        _sr.material = hitFlash;
+        Invoke(nameof(ResetMaterial), 0.1f);
+
+        if (hitParticles)
+        {
+            ParticleSystem system = Instantiate(hitParticles);
+            system.transform.position = transform.position;
+            
+        }
+        
         //If resistant, take half damage
         if (Resistances.Contains(damageType))
         {
@@ -58,7 +77,7 @@ public class Health : MonoBehaviour
             ChangeHealth(-damage);
         }
 
-        if (_rb != null)
+        if (_rb)
         {
             _rb.AddForce(knockback, ForceMode2D.Impulse);
         }
@@ -67,5 +86,10 @@ public class Health : MonoBehaviour
     public void Regenerate()
     {
         ChangeHealth(1);
+    }
+
+    public void ResetMaterial()
+    {
+        _sr.material = _defaultMaterial;
     }
 }

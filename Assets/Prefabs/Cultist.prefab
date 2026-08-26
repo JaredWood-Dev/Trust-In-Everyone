@@ -115,6 +115,8 @@ MonoBehaviour:
   health: 50
   maxHealth: 50
   regen: 1
+  hitParticles: {fileID: 1008133084095626066, guid: fdc41e4f8500b4844966105192483607, type: 3}
+  hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 
 --- !u!61 &5023945303470617172
 BoxCollider2D:

@@ -520,6 +520,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   regen: 1
+  hitParticles: {fileID: 1008133084095626066, guid: fdc41e4f8500b4844966105192483607, type: 3}
+  hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 01000000
 --- !u!1 &321159330
 GameObject:
@@ -1100,6 +1102,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   regen: 1
+  hitParticles: {fileID: 1008133084095626066, guid: fdc41e4f8500b4844966105192483607, type: 3}
+  hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 02000000
 --- !u!1 &474205826
 GameObject:
@@ -1575,7 +1579,7 @@ MonoBehaviour:
   damageIndicator: {fileID: 885096422256067711, guid: 2705880841cb93343b739adc7612d5ac, type: 3}
   healthBar: {fileID: 779731469}
   ally1Container: {fileID: 408292592}
-  barColor1: {r: 0.18823531, g: 0.18823531, b: 0.23137257, a: 1}
+  barColor1: {r: 1, g: 0.5686275, b: 0.40000004, a: 1}
   ally2Container: {fileID: 1579328421}
   barColor2: {r: 0.6862745, g: 0.90196085, b: 0.9960785, a: 1}
   ally3Container: {fileID: 1837666674}
@@ -1715,7 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20784314, g: 0.20784314, b: 0.2509804, a: 1}
+  m_Color: {r: 0.9960785, g: 0.5686275, b: 0.40000004, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1784,37 +1788,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &976455953
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 976455954}
-  m_Layer: 0
-  m_Name: Dummy
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &976455954
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976455953}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.9, y: -28.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1049624305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1837,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1941,6 +1914,8 @@ MonoBehaviour:
   health: 50
   maxHealth: 50
   regen: 0
+  hitParticles: {fileID: 1008133084095626066, guid: fdc41e4f8500b4844966105192483607, type: 3}
+  hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 04000000
 --- !u!50 &1049624310
 Rigidbody2D:
@@ -173327,6 +173302,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   regen: 1
+  hitParticles: {fileID: 1008133084095626066, guid: fdc41e4f8500b4844966105192483607, type: 3}
+  hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 04000000
 --- !u!1 &1579328421
 GameObject:
@@ -174004,6 +173981,8 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   regen: 1
+  hitParticles: {fileID: 1008133084095626066, guid: fdc41e4f8500b4844966105192483607, type: 3}
+  hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 03000000
 --- !u!1 &1970826293
 GameObject:
@@ -174055,7 +174034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20392159, g: 0.20392159, b: 0.24705884, a: 1}
+  m_Color: {r: 0.9960785, g: 0.5686275, b: 0.40000004, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -219927,6 +219906,5 @@ SceneRoots:
   - {fileID: 1725211077}
   - {fileID: 1532435271}
   - {fileID: 823629607}
-  - {fileID: 976455954}
   - {fileID: 427641001}
   - {fileID: 9272891}
