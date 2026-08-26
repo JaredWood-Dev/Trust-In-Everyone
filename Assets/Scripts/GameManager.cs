@@ -23,21 +23,21 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Elements")]
     public Image healthBar;
+    
     public GameObject ally1Container;
     private Image _ally1Image;
-    public Color barColor1;
     private Image _bar1Image;
+    
     public GameObject ally2Container;
     private Image _ally2Image;
-    public Color barColor2;
     private Image _bar2Image;
+    
     public GameObject ally3Container;
     private Image _ally3Image;
-    public Color barColor3;
     private Image _bar3Image;
+    
     public GameObject ally4Container;
     private Image _ally4Image;
-    public Color barColor4;
     private Image _bar4Image;
 
     public TMP_Text waveCounter;
@@ -80,6 +80,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        slot1 = Instantiate(slot1, player.transform.position, Quaternion.identity);
+        slot1.GetComponent<AlliedMoveTo>().allyOffset = new Vector2(3, 0);
+        slot2 = Instantiate(slot2, player.transform.position, Quaternion.identity);
+        slot2.GetComponent<AlliedMoveTo>().allyOffset = new Vector2(-3, 0);
+        slot3 = Instantiate(slot3, player.transform.position, Quaternion.identity);
+        slot3.GetComponent<AlliedMoveTo>().allyOffset = new Vector2(0, 3);
+        slot4 = Instantiate(slot4, player.transform.position, Quaternion.identity);
+        slot4.GetComponent<AlliedMoveTo>().allyOffset = new Vector2(0, -3);
+        
         player = GameObject.FindGameObjectWithTag("Player");
         _plrHealth = player.GetComponent<Health>();
         _pltAttack = player.GetComponent<PlayerAttack>();
@@ -97,11 +106,21 @@ public class GameManager : MonoBehaviour
         _bar3Image = ally3Container.transform.GetChild(1).GetChild(0).GetComponent<Image>();
         _bar4Image = ally4Container.transform.GetChild(1).GetChild(0).GetComponent<Image>();
         
+        _ally1Image = ally1Container.transform.GetChild(0).GetComponent<Image>();
+        _ally2Image = ally2Container.transform.GetChild(0).GetComponent<Image>();
+        _ally3Image = ally3Container.transform.GetChild(0).GetComponent<Image>();
+        _ally4Image = ally4Container.transform.GetChild(0).GetComponent<Image>();
+        
+        _ally1Image.sprite = slot1.GetComponent<AlliedStatManager>().allyData.allyIcon;
+        _ally2Image.sprite = slot2.GetComponent<AlliedStatManager>().allyData.allyIcon;
+        _ally3Image.sprite = slot3.GetComponent<AlliedStatManager>().allyData.allyIcon;
+        _ally4Image.sprite = slot4.GetComponent<AlliedStatManager>().allyData.allyIcon;
+        
         //assign bar colors
-        _bar1Image.color = barColor1;
-        _bar2Image.color = barColor2;
-        _bar3Image.color = barColor3;
-        _bar4Image.color = barColor4;
+        _bar1Image.color = slot1.GetComponent<AlliedStatManager>().allyData.allyColor;
+        _bar2Image.color = slot2.GetComponent<AlliedStatManager>().allyData.allyColor;
+        _bar3Image.color = slot3.GetComponent<AlliedStatManager>().allyData.allyColor;
+        _bar4Image.color = slot4.GetComponent<AlliedStatManager>().allyData.allyColor;
     }
 
     void Update()
