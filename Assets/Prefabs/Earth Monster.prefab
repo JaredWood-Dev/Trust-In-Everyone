@@ -217,11 +217,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   aggressionDistance: 10
   attackDistance: 1
-  movementSpeed: 1
+  movementSpeed: 3
   attackDamage: 5
   attackSpeed: 1
   knockback: 10
   damageType: 0
+  stunDuration: 0.5
   isCultist: 0
   player: {fileID: 0}
   target: {fileID: 0}

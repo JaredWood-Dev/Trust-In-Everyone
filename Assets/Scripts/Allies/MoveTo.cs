@@ -45,4 +45,9 @@ public class MoveTo : MonoBehaviour
     {
         _ai.destination = obj.transform.position;
     }
+
+    public void SetSpeed(float speed)
+    {
+        _ai.maxSpeed = speed;
+    }
 }

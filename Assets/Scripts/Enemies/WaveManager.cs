@@ -36,13 +36,12 @@ public class WaveManager : MonoBehaviour
 
     public IEnumerator SpawnWave()
     {
-        totalEnemyCount = waves[currentWaveIndex].enemies.Length;
+        enemyCount = waves[currentWaveIndex].enemies.Length;
         
         foreach (EnemyAI enemy in waves[currentWaveIndex].enemies)
         {
             Vector2 randomSpawn = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)];
             GameObject e = Instantiate(enemy.gameObject, randomSpawn, Quaternion.identity);
-            enemyCount++;
             
             yield return new WaitForSeconds(timeToNextEnemy);
         }

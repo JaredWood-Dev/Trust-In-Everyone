@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public float attackSpeed = 1;
     public float knockback = 10;
     public DamageTypes damageType;
+    public float stunDuration = 1;
     
     public bool isCultist = false; //TODO: CHANGE LATER
 
@@ -25,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         moveTo = GetComponent<MoveTo>();
+        moveTo.SetSpeed(movementSpeed);
 
         //default state
         _currentState = new EnemySearch(this);
@@ -52,7 +54,28 @@ public class EnemyAI : MonoBehaviour
             case States.EnemySearching:
                 _currentState = new CultistSearch(this);
                 break;
+            case States.EnemyStunned:
+                _currentState = new EnemyStun(this);
+                break;
         }
         _currentState.Enter();
+    }
+
+    void EnemyHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
+    {
+        if (target == gameObject)
+        {
+            RequestState(States.EnemyStunned);
+        }
+    }
+
+    void OnEnable()
+    {
+        EventManager.OnCreatureHit += EnemyHit;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnCreatureHit -= EnemyHit;
     }
 }
