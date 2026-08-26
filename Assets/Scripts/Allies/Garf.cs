@@ -52,13 +52,16 @@ public class Garf : MonoBehaviour, IAlly
     void Start()
     {
         AttackSpeed = attackSpeed;
+        CharacterAttack = new GarfAttack(gameObject.GetComponent<AlliedAI>());
     }
 
     void Update()
     {
+        /*
         if (InputSystem.actions.FindAction("Attack").WasPressedThisFrame())
         {
             Attack();
         }
+        */
     }
 }
