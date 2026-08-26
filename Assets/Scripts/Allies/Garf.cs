@@ -31,9 +31,9 @@ public class Garf : MonoBehaviour, IAlly
         Vector2 Vdirection = MathFunctions.DegreesToVector(direction);
         Vector2 offset = Vdirection * (lightningParticles.shape.scale.x / 2);
         
-        ParticleSystem system = Instantiate(lightningParticles, transform.position + (Vector3)offset, Quaternion.Euler(new Vector3(0, 0, direction)));
-        var main = system.main;
-        main.startRotation = direction;
+        ParticleSystem system = Instantiate(lightningParticles);
+        system.transform.position = transform.position;
+        system.transform.rotation = Quaternion.Euler(direction - 180, -90, -90);
         
         //Trigger an AOE damaging all enemies inside
         Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position + (Vector3)offset, new Vector2(lightningParticles.shape.scale.x, 1), direction,targetLayers);
@@ -54,6 +54,9 @@ public class Garf : MonoBehaviour, IAlly
 
     void Update()
     {
-        
+        if (InputSystem.actions.FindAction("Attack").WasPressedThisFrame())
+        {
+            Attack();
+        }
     }
 }
