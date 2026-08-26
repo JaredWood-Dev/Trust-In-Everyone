@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player;
     private Health _plrHealth;
+    private PlayerAttack _pltAttack;
     
     [Header("Ally Slots")]
     public GameObject slot1;
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text remainingCounter;
     public GameObject nextWaveButton;
     private WaveManager _waveManager;
+    public Image abilityFill;
     
     void CreatureHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
     {
@@ -75,6 +77,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        _plrHealth = player.GetComponent<Health>();
+        _pltAttack = player.GetComponent<PlayerAttack>();
         _waveManager = GameObject.FindGameObjectWithTag("Wave Manager").GetComponent<WaveManager>();
         
         _plrHealth = player.GetComponent<Health>();
@@ -112,6 +116,9 @@ public class GameManager : MonoBehaviour
 
         waveCounter.text = _waveManager.currentWaveIndex.ToString();
         remainingCounter.text = _waveManager.enemyCount.ToString();
+
+        float abilityPercent = 1 - Mathf.Min(_pltAttack._attackTimer, _pltAttack.attackSpeed) / _pltAttack.attackSpeed;
+        abilityFill.rectTransform.sizeDelta = new Vector2(100, abilityPercent * 100f);
     }
 
     void EnemyDied(GameObject target, GameObject killer)

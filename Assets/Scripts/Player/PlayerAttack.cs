@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,8 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask targetLayers;
     public ParticleSystem particles;
 
-    private float _attackTimer;
+    [NonSerialized]
+    public float _attackTimer;
     private SpriteRenderer _rn;
 
     private InputAction _attackAction;

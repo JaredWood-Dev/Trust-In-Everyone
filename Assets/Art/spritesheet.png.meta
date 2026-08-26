@@ -1567,6 +1567,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: axe_icon
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 910
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a077a2ab737b434baaf159222d11870
+      internalID: 2079689357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1581,6 +1603,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      axe_icon: 2079689357
       axe_slash_1: -705556074
       axe_slash_2: 159535805
       axe_slash_3: -1035598830
