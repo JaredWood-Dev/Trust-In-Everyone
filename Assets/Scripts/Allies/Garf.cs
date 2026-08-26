@@ -34,9 +34,11 @@ public class Garf : MonoBehaviour, IAlly
         ParticleSystem system = Instantiate(lightningParticles);
         system.transform.position = transform.position;
         system.transform.rotation = Quaternion.Euler(direction - 180, -90, -90);
+        var main = system.main;
+        main.startRotation = -direction * Mathf.Deg2Rad;
         
         //Trigger an AOE damaging all enemies inside
-        Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position + (Vector3)offset, new Vector2(lightningParticles.shape.scale.x, 1), direction,targetLayers);
+        Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position + (Vector3)offset, new Vector2(20, 1), direction,targetLayers);
         foreach (var t in targets)
         {
             Health h = t.GetComponent<Health>();
