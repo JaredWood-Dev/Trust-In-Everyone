@@ -5,5 +5,6 @@
     EnemySearching,
     EnemyFollowing,
     EnemyAttacking,
-    EnemyStunned
+    EnemyStunned,
+    Retreating
 }

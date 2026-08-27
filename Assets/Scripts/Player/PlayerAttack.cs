@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata.Ecma335;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,10 +17,14 @@ public class PlayerAttack : MonoBehaviour
     private SpriteRenderer _rn;
 
     private InputAction _attackAction;
+    private InputAction _attackOrder;
+    private InputAction _defendOrder;
 
     void Start()
     {
         _attackAction = InputSystem.actions.FindAction("Attack");
+        _attackOrder = InputSystem.actions.FindAction("Command Attack");
+        _defendOrder = InputSystem.actions.FindAction("Command Defend");
         
         _rn = GetComponent<SpriteRenderer>();
     }
@@ -53,6 +58,23 @@ public class PlayerAttack : MonoBehaviour
             //Reset Attack Timer
             _attackTimer = 0;
         }
+
+        if (_defendOrder.WasPressedThisFrame())
+        {
+            EventManager.DefendOrder();
+        }
+
+        if (_attackOrder.WasPressedThisFrame())
+        {
+            Vector2 mousePos = Mouse.current.position.ReadValue(); 
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            var objectHit = Physics2D.Raycast(mousePos, Vector2.zero, 10, targetLayers);
+            if (objectHit)
+                EventManager.AttackOrder(objectHit.collider.gameObject);
+            else
+                EventManager.PointOrder(new System.Numerics.Vector2(mousePos.x, mousePos.y));
+        }
+        
         _attackTimer += Time.deltaTime;
     }
 }

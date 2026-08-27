@@ -57,7 +57,25 @@ public class AlliedAI : MonoBehaviour
                     currentState = new Attack(this);
                 }
                 break;
+            case States.Retreating:
+                currentState = new Retreat(this);
+                break;
         }
         currentState.Enter();
+    }
+
+    void Retreat()
+    {
+        RequestState(States.Retreating);
+    }
+
+    void OnEnable()
+    {
+        EventManager.OnDefendOrder += Retreat;
+    }
+
+    void OnDisable()
+    {
+        EventManager.OnDefendOrder -= Retreat;
     }
 }
