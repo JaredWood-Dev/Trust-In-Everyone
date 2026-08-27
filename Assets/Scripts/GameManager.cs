@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     private Health _plrHealth;
     private PlayerAttack _pltAttack;
     
-    //todo: replace with proper data structure
     [Header("Ally Slots")]
     public AllyDataContainer[] party = new AllyDataContainer[4];
 
@@ -200,6 +199,21 @@ public class GameManager : MonoBehaviour
         }
         
         upgradePointsText.text = upgradePoints.ToString();
+
+        if (upgradePoints == 0)
+        {
+            for (int i = 0; i < upgradeButtons.Length; i++)
+            {
+                upgradeButtons[i].interactable = false;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < upgradeButtons.Length; i++)
+            {
+                upgradeButtons[i].interactable = true;
+            }
+        }
         
     }
 
@@ -210,6 +224,10 @@ public class GameManager : MonoBehaviour
         nextWaveButton.SetActive(true);
         upgradePoints += 4;
         upgradePointsText.text = upgradePoints.ToString();
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            upgradeButtons[i].interactable = true;
+        }
     }
     
     void OnEnable()

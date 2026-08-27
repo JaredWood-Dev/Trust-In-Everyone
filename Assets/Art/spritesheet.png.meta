@@ -1611,6 +1611,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ui_button_disabled
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 910
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 2, y: 4, z: 2, w: 4}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe81510f43d1114dbbb3798a2cb61ca
+      internalID: -2135377922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1683,6 +1705,7 @@ TextureImporter:
       path_8: -710714906
       path_9: -2018011124
       ui_button: 1587690333
+      ui_button_disabled: -2135377922
       ui_button_pressed: -2101283915
       ui_container: 1302287205
       water: 2028876336
