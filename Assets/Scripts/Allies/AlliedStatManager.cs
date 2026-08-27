@@ -18,6 +18,13 @@ public class AlliedStatManager : MonoBehaviour
         _moveTo = GetComponent<AlliedMoveTo>();
         _gameManager = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
         
+        //reset values
+        allyData.health = allyData.initialHealth;
+        allyData.damage = allyData.initialDamage;
+        allyData.regen = allyData.initialRegen;
+        allyData.attackSpeed = allyData.initialAttackSpeed;
+        allyData.moveSpeed = allyData.initialMoveSpeed;
+        
         ApplyStats();
     }
 

@@ -15,11 +15,11 @@ MonoBehaviour:
   allyName: Garf
   allyColor: {r: 0.3019608, g: 0.6509804, b: 0.9960785, a: 1}
   allyIcon: {fileID: 1801382620, guid: e47fa93cc6cbfbd4a934dc11547498cc, type: 3}
-  damage: 10
+  initialDamage: 15
   damageType: 3
-  attackSpeed: 5
+  initialAttackSpeed: 5
   aggressionDistance: 10
   attackDistance: 7
-  moveSpeed: 13
-  health: 100
-  regen: 1
+  initialMoveSpeed: 13
+  initialHealth: 100
+  initialRegen: 1

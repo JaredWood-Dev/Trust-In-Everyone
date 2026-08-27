@@ -15,11 +15,11 @@ MonoBehaviour:
   allyName: Jordgar
   allyColor: {r: 0.9960785, g: 0.5686275, b: 0.40000004, a: 1}
   allyIcon: {fileID: -1849959097, guid: e47fa93cc6cbfbd4a934dc11547498cc, type: 3}
-  damage: 30
+  initialDamage: 30
   damageType: 0
-  attackSpeed: 7
+  initialAttackSpeed: 10
   aggressionDistance: 5
   attackDistance: 3
-  moveSpeed: 10
-  health: 150
-  regen: 2
+  initialMoveSpeed: 10
+  initialHealth: 150
+  initialRegen: 2

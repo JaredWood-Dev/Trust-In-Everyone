@@ -9,15 +9,23 @@ public class GameManager : MonoBehaviour
     private Health _plrHealth;
     private PlayerAttack _pltAttack;
     
+    //todo: replace with proper data structure
     [Header("Ally Slots")]
     public GameObject slot1;
     private Health _1Health;
+    private AllyData _1data;
+    
     public GameObject slot2;
     private Health _2Health;
+    private AllyData _2data;
+    
     public GameObject slot3;
     private Health _3Health;
+    private AllyData _3data;
+    
     public GameObject slot4;
     private Health _4Health;
+    private AllyData _4data;
 
     public GameObject damageIndicator;
 
@@ -45,6 +53,13 @@ public class GameManager : MonoBehaviour
     public GameObject nextWaveButton;
     private WaveManager _waveManager;
     public Image abilityFill;
+    
+    [Header("Upgrade Screen")]
+    public GameObject upgradeScreen;
+    public Button[] upgradeButtons;
+    public StatPanel[] statCounters;
+    public int upgradePoints = 0;
+    public TMP_Text upgradePointsText;
     
     void CreatureHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
     {
@@ -121,6 +136,14 @@ public class GameManager : MonoBehaviour
         _bar2Image.color = slot2.GetComponent<AlliedStatManager>().allyData.allyColor;
         _bar3Image.color = slot3.GetComponent<AlliedStatManager>().allyData.allyColor;
         _bar4Image.color = slot4.GetComponent<AlliedStatManager>().allyData.allyColor;
+        
+        //get ally data reference
+        _1data = slot1.GetComponent<AlliedStatManager>().allyData;
+        _2data = slot2.GetComponent<AlliedStatManager>().allyData;
+        _3data = slot3.GetComponent<AlliedStatManager>().allyData;
+        _4data = slot4.GetComponent<AlliedStatManager>().allyData;
+        
+        upgradeScreen.SetActive(false);
     }
 
     void Update()
@@ -146,28 +169,215 @@ public class GameManager : MonoBehaviour
 
     void EnemyDied(GameObject target, GameObject killer)
     {
-        if (_waveManager.enemyCount <= 1)
-        {
-            nextWaveButton.SetActive(true);
-        }
+        
     }
 
     public void TriggerWave()
     {
         nextWaveButton.SetActive(false);
         _waveManager.StartWave();
+        upgradeScreen.SetActive(false);
+    }
+
+    public void UpdateHealth(int slot)
+    {
+        switch (slot)
+        {
+            case 1:
+                _1data.health += 1;
+                break;
+            case 2:
+                _2data.health += 1;
+                break;
+            case 3:
+                _3data.health += 1;
+                break;
+            case 4:
+                _4data.health += 1;
+                break;
+        }
+        UpdateStats();
+    }
+    
+    public void UpdateMovementSpeed(int slot)
+    {
+        if (upgradePoints > 0)
+        {
+            switch (slot)
+            {
+                case 1:
+                    _1data.moveSpeed += 1;
+                    break;
+                case 2:
+                    _2data.moveSpeed += 1;
+                    break;
+                case 3:
+                    _3data.moveSpeed += 1;
+                    break;
+                case 4:
+                    _4data.moveSpeed += 1;
+                    break;
+            }
+            upgradePoints -= 1;
+        }
+
+        UpdateStats();
+    }
+    
+    public void UpdateDamage(int slot)
+    {
+        if (upgradePoints > 0)
+        {
+            switch (slot)
+            {
+                case 1:
+                    _1data.damage += 1;
+                    break;
+                case 2:
+                    _2data.damage += 1;
+                    break;
+                case 3:
+                    _3data.damage += 1;
+                    break;
+                case 4:
+                    _4data.damage += 1;
+                    break;
+            }
+            upgradePoints -= 1;
+        }
+
+        UpdateStats();
+    }
+    
+    public void UpdateAttackSpeed(int slot)
+    {
+        if (upgradePoints > 0)
+        {
+            switch (slot)
+            {
+                case 1:
+                    _1data.attackSpeed += 1;
+                    break;
+                case 2:
+                    _2data.attackSpeed += 1;
+                    break;
+                case 3:
+                    _3data.attackSpeed += 1;
+                    break;
+                case 4:
+                    _4data.attackSpeed += 1;
+                    break;
+            }
+            upgradePoints -= 1;
+        }
+
+        UpdateStats();
+    }
+    
+    public void UpdateRegen(int slot)
+    {
+        if (upgradePoints > 0)
+        {
+            switch (slot)
+            {
+                case 1:
+                    _1data.regen += 1;
+                    break;
+                case 2:
+                    _2data.regen += 1;
+                    break;
+                case 3:
+                    _3data.regen += 1;
+                    break;
+                case 4:
+                    _4data.regen += 1;
+                    break;
+            }
+            upgradePoints -= 1;
+        }
+
+        UpdateStats();
+    }
+
+    void UpdateStats()
+    {
+        slot1.GetComponent<AlliedStatManager>().ApplyStats();
+        slot2.GetComponent<AlliedStatManager>().ApplyStats();
+        slot3.GetComponent<AlliedStatManager>().ApplyStats();
+        slot4.GetComponent<AlliedStatManager>().ApplyStats();
+        
+        //slot 1
+        statCounters[0].healthText.text = _1data.health.ToString();
+        statCounters[0].damageText.text = _1data.damage.ToString();
+        statCounters[0].regenText.text = _1data.regen.ToString();
+        statCounters[0].attackSpeedText.text = _1data.attackSpeed.ToString();
+        statCounters[0].moveSpeedText.text = _1data.moveSpeed.ToString();
+        statCounters[0].icon.sprite = _1data.allyIcon;
+        statCounters[0].name.text = _1data.name;
+        
+        //slot 2
+        statCounters[1].healthText.text = _2data.health.ToString();
+        statCounters[1].damageText.text = _2data.damage.ToString();
+        statCounters[1].regenText.text = _2data.regen.ToString();
+        statCounters[1].attackSpeedText.text = _2data.attackSpeed.ToString();
+        statCounters[1].moveSpeedText.text = _2data.moveSpeed.ToString();
+        statCounters[1].icon.sprite = _2data.allyIcon;
+        statCounters[1].name.text = _2data.name;
+        
+        //slot 3
+        statCounters[2].healthText.text = _3data.health.ToString();
+        statCounters[2].damageText.text = _3data.damage.ToString();
+        statCounters[2].regenText.text = _3data.regen.ToString();
+        statCounters[2].attackSpeedText.text = _3data.attackSpeed.ToString();
+        statCounters[2].moveSpeedText.text = _3data.moveSpeed.ToString();
+        statCounters[2].icon.sprite = _3data.allyIcon;
+        statCounters[2].name.text = _3data.name;
+        
+        //slot 4
+        statCounters[3].healthText.text = _4data.health.ToString();
+        statCounters[3].damageText.text = _4data.damage.ToString();
+        statCounters[3].regenText.text = _4data.regen.ToString();
+        statCounters[3].attackSpeedText.text = _4data.attackSpeed.ToString();
+        statCounters[3].moveSpeedText.text = _4data.moveSpeed.ToString();
+        statCounters[3].icon.sprite = _4data.allyIcon;
+        statCounters[3].name.text = _4data.name;
+        
+        upgradePointsText.text = upgradePoints.ToString();
+        
+    }
+
+    void WaveEnded()
+    {
+        UpdateStats();
+        upgradeScreen.SetActive(true);
+        nextWaveButton.SetActive(true);
+        upgradePoints += 4;
+        upgradePointsText.text = upgradePoints.ToString();
     }
     
     void OnEnable()
     {
         EventManager.OnCreatureHit += CreatureHit;
         EventManager.OnEnemyDeath += EnemyDied;
+        EventManager.OnWaveEnd += WaveEnded;
     }
 
     void OnDisable()
     {
         EventManager.OnCreatureHit -= CreatureHit;
         EventManager.OnEnemyDeath -= EnemyDied;
+        EventManager.OnWaveEnd -= WaveEnded;
     }
-    
+}
+
+[System.Serializable]
+public class StatPanel
+{
+    public Image icon;
+    public TMP_Text name;
+    public TMP_Text healthText;
+    public TMP_Text damageText;
+    public TMP_Text regenText;
+    public TMP_Text attackSpeedText;
+    public TMP_Text moveSpeedText;
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,15 +10,25 @@ public class AllyData : ScriptableObject
     public Color allyColor;
     public Sprite allyIcon;
     [Header("Combat")] 
+    public int initialDamage;
+    [NonSerialized]
     public int damage;
     public DamageTypes damageType;
+    public float initialAttackSpeed;
+    [NonSerialized]
     public float attackSpeed;
     [Header("AI Configurations")] 
     public float aggressionDistance;
     public float attackDistance;
     [Header("Movement")] 
+    public float initialMoveSpeed;
+    [NonSerialized]
     public float moveSpeed;
-    [Header("Health")] 
+    [Header("Health")]
+    public int initialHealth;
+    [NonSerialized]
     public int health;
+    public int initialRegen;
+    [NonSerialized]
     public int regen;
 }

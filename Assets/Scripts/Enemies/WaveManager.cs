@@ -57,6 +57,11 @@ public class WaveManager : MonoBehaviour
     public void EnemyKilled(GameObject target, GameObject killer)
     {
         enemyCount--;
+        if (enemyCount < 1)
+        {
+            print("wave ended");
+            EventManager.WaveEnd();
+        }
     }
 
     private void OnEnable()

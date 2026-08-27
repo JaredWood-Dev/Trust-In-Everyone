@@ -15,11 +15,11 @@ MonoBehaviour:
   allyName: Winter
   allyColor: {r: 0.6862745, g: 0.90196085, b: 1, a: 1}
   allyIcon: {fileID: 198293949, guid: e47fa93cc6cbfbd4a934dc11547498cc, type: 3}
-  damage: 5
+  initialDamage: 5
   damageType: 2
-  attackSpeed: 1
+  initialAttackSpeed: 1
   aggressionDistance: 15
   attackDistance: 15
-  moveSpeed: 14
-  health: 100
-  regen: 1
+  initialMoveSpeed: 14
+  initialHealth: 100
+  initialRegen: 1
