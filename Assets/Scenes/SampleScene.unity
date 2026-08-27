@@ -1282,16 +1282,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player: {fileID: 1049624305}
-  slot1: {fileID: 7303696339427322259, guid: a9e00b60507de2747ae640c7d68b25f9, type: 3}
-  slot2: {fileID: 2224500595254220169, guid: 8c7287d194d3bac41a6b7bc0f7d1cbf2, type: 3}
-  slot3: {fileID: 8363125143545773333, guid: fe88a7cbb38682347ad102e310148e8f, type: 3}
-  slot4: {fileID: 4930979538709542710, guid: 161b4a2b7e9c090429a8b3880960d93e, type: 3}
+  party:
+  - ally: {fileID: 7303696339427322259, guid: a9e00b60507de2747ae640c7d68b25f9, type: 3}
+    HUDcontainer: {fileID: 408292592}
+    allyIcon: {fileID: 1403171500}
+    allyBar: {fileID: 1970826295}
+  - ally: {fileID: 7303696339427322259, guid: a9e00b60507de2747ae640c7d68b25f9, type: 3}
+    HUDcontainer: {fileID: 1579328421}
+    allyIcon: {fileID: 1997061945}
+    allyBar: {fileID: 1511927283}
+  - ally: {fileID: 7303696339427322259, guid: a9e00b60507de2747ae640c7d68b25f9, type: 3}
+    HUDcontainer: {fileID: 1837666674}
+    allyIcon: {fileID: 1174782594}
+    allyBar: {fileID: 321159332}
+  - ally: {fileID: 7303696339427322259, guid: a9e00b60507de2747ae640c7d68b25f9, type: 3}
+    HUDcontainer: {fileID: 1871218127}
+    allyIcon: {fileID: 474205828}
+    allyBar: {fileID: 1335261382}
   damageIndicator: {fileID: 885096422256067711, guid: 2705880841cb93343b739adc7612d5ac, type: 3}
   healthBar: {fileID: 779731469}
-  ally1Container: {fileID: 408292592}
-  ally2Container: {fileID: 1579328421}
-  ally3Container: {fileID: 1837666674}
-  ally4Container: {fileID: 1871218127}
   waveCounter: {fileID: 810095931}
   remainingCounter: {fileID: 1757568478}
   nextWaveButton: {fileID: 2136977896}
