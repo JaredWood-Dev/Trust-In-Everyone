@@ -30,7 +30,7 @@ public class Jordgar : MonoBehaviour, IAlly
             if (h)
             {
                 Vector2 knockbackVector = ((Vector2)target.transform.position - (Vector2)transform.position) * knockback;
-                h.Damage(Damage, DamageType, knockbackVector);
+                h.Damage(Damage, DamageType, knockbackVector, gameObject);
             }
         }
     }

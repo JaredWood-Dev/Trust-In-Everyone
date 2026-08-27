@@ -32,6 +32,7 @@ public class Winter : MonoBehaviour, IAlly
         projectileScript.damageType = DamageType;
         projectileScript.knockback = knockback;
         projectileScript.velocity = projectileVelocity;
+        projectileScript.attacker = gameObject;
     }
     
     void Start()

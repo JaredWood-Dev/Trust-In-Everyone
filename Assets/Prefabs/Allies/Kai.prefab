@@ -224,13 +224,13 @@ MonoBehaviour:
     mode: 2
     interval: 0.5
     sensitivity: 10
-    maximumInterval: 2
+    maximumInterval: 4
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: 5
   rotationSpeed: 360
   slowdownDistance: 10
-  pickNextWaypointDist: 2
+  pickNextWaypointDist: 3
   endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
@@ -304,6 +304,7 @@ MonoBehaviour:
   attackDistance: 2
   returnDistance: 15
   player: {fileID: 0}
+  target: {fileID: 0}
   moveTo: {fileID: 5117956787587088301}
 --- !u!114 &4208966472251822147
 MonoBehaviour:

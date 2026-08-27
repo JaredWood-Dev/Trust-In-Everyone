@@ -23,7 +23,7 @@ public class Attack : AIState
         {
             Ai.RequestState(States.Defending);
         }
-        GameObject nearestEnemy = GameObjectLocator.FindNearestWithTag(Ai.player.gameObject, "Enemy");
+        GameObject nearestEnemy = GameObjectLocator.FindNearestWithTag(Ai.gameObject.gameObject, "Enemy");
         if (!nearestEnemy)
         {
             Ai.RequestState(States.Defending);
@@ -35,7 +35,11 @@ public class Attack : AIState
             }
             else
             {
-                Ai.moveTo.SetDestination(nearestEnemy.transform.position);
+                Vector2 differenceVector = Ai.player.transform.position - nearestEnemy.transform.position;
+                Vector2 offset = differenceVector.normalized * 2f;
+                Vector2 targetLocation = (Vector2)nearestEnemy.transform.position + offset;
+
+                Ai.moveTo.SetDestination(targetLocation);
                 if (Vector3.Distance(Ai.gameObject.transform.position, nearestEnemy.transform.position) <
                     Ai.attackDistance && Ai.AttackTimer > Ai.ally.AttackSpeed)
                 {

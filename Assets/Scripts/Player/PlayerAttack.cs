@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
                 Vector2 knockback = -(transform.position - hit.transform.position).normalized * knockbackStrength;
                 if (hit.collider.gameObject.GetComponent<Health>())
                 {
-                    hit.collider.gameObject.GetComponent<Health>().Damage(damage, damageType, knockback);
+                    hit.collider.gameObject.GetComponent<Health>().Damage(damage, damageType, knockback, gameObject);
                 }
             }
             

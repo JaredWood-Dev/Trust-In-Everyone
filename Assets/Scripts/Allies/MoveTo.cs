@@ -46,10 +46,14 @@ public class MoveTo : MonoBehaviour
         _ai.destination = obj.transform.position;
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed(float speed, float acceleration = 0)
     {
         _ai = GetComponent<AIPath>();
         if (_ai)
             _ai.maxSpeed = speed;
+        
+        if (acceleration == 0)
+            if (_ai)
+                _ai.maxAcceleration = speed * 0.9f;
     }
 }

@@ -7,6 +7,7 @@ public class AlliedProjectile : MonoBehaviour
     public DamageTypes damageType;
     public Vector2 velocity;
     public float knockback;
+    public GameObject attacker;
     
     private Rigidbody2D _rb;
 
@@ -25,7 +26,7 @@ public class AlliedProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Health>().Damage(damage, damageType, velocity.normalized * knockback);
+            collision.gameObject.GetComponent<Health>().Damage(damage, damageType, velocity.normalized * knockback, attacker);
             Destroy(gameObject);
         }
     }

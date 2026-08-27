@@ -16,13 +16,10 @@ public class EnemySearch : AIState
     
     public override void Update()
     {
-        //Move to Coal
-        if (EAi.player)
-            EAi.moveTo.SetDestination(EAi.player.transform.position);
-        
         GameObject closestAlly = GameObjectLocator.FindNearestWithTag(EAi.gameObject, "Ally");
         if (closestAlly)
         {
+            EAi.moveTo.SetDestination(closestAlly.transform.position);
             if (Vector3.Distance(EAi.gameObject.transform.position, closestAlly.transform.position) <
                 EAi.aggressionDistance)
             {

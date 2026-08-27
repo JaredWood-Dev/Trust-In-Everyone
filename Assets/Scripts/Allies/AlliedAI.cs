@@ -11,6 +11,7 @@ public class AlliedAI : MonoBehaviour
     public float returnDistance = 15; //distance that allies return to coal
 
     public GameObject player;
+    public GameObject target;
     public IAlly ally;
     public MoveTo moveTo;
     

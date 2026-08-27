@@ -39,11 +39,9 @@ public class WaveManager : MonoBehaviour
 
     public void EnemyKilled(GameObject target, GameObject killer)
     {
-        print("enemy killed");
         enemyCount--;
         if (enemyCount < 1)
         {
-            print("wave ended");
             EventManager.WaveEnd();
         }
     }

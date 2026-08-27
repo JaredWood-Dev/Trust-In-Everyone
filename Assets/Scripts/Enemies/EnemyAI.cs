@@ -38,6 +38,8 @@ public class EnemyAI : MonoBehaviour
         _currentState.Update();
         
         AttackTimer += Time.deltaTime;
+        print(_currentState);
+        print(target);
     }
 
     public void RequestState(States state)
@@ -52,7 +54,9 @@ public class EnemyAI : MonoBehaviour
                 _currentState = new EnemyFollow(this);
                 break;
             case States.EnemySearching:
-                _currentState = new CultistSearch(this);
+                _currentState = new EnemySearch(this);
+                if (isCultist)
+                    _currentState = new CultistSearch(this);
                 break;
             case States.EnemyStunned:
                 _currentState = new EnemyStun(this);
@@ -61,11 +65,14 @@ public class EnemyAI : MonoBehaviour
         _currentState.Enter();
     }
 
-    void EnemyHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
+    void EnemyHit(GameObject victim, GameObject attacker, int damage, DamageTypes damageType)
     {
-        if (target == gameObject)
+        
+        if (victim == gameObject)
         {
+            print("setting target to: " + attacker.name);
             RequestState(States.EnemyStunned);
+            target = attacker;
         }
     }
 

@@ -15,7 +15,8 @@ public class EnemyAttack : AIState
             {
                 EAi.AttackTimer = 0;
                 Vector2 knockback = (EAi.target.transform.position - EAi.gameObject.transform.position).normalized * EAi.knockback;
-                EAi.target.GetComponent<Health>().Damage(EAi.attackDamage, EAi.damageType, knockback);
+                if (EAi.target.GetComponent<Health>())
+                    EAi.target.GetComponent<Health>().Damage(EAi.attackDamage, EAi.damageType, knockback, EAi.gameObject);
             }
         }
         

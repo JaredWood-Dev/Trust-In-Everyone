@@ -1522,13 +1522,9 @@ MonoBehaviour:
     - {fileID: 702328675119467679, guid: 11b96c9671cb83643af2e3b230c304b1, type: 3}
     - {fileID: 702328675119467679, guid: 11b96c9671cb83643af2e3b230c304b1, type: 3}
     - {fileID: 702328675119467679, guid: 11b96c9671cb83643af2e3b230c304b1, type: 3}
-  countdown: 5
-  timeToNextWave: 5
   timeToNextEnemy: 0.5
   currentWaveIndex: 0
-  isOver: 0
   enemyCount: 0
-  totalEnemyCount: 0
   spawnPositions:
   - {x: 60, y: 10}
   - {x: 0, y: -45}
@@ -2239,7 +2235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111c3e6401530594b8b457c690122b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controller
-  movementSpeed: 10
+  movementSpeed: 7
 --- !u!114 &1049624309
 MonoBehaviour:
   m_ObjectHideFlags: 0

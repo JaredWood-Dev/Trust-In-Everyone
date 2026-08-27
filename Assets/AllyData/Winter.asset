@@ -20,6 +20,6 @@ MonoBehaviour:
   initialAttackSpeed: 1
   aggressionDistance: 15
   attackDistance: 15
-  initialMoveSpeed: 14
+  initialMoveSpeed: 15
   initialHealth: 100
   initialRegen: 1

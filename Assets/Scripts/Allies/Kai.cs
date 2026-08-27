@@ -39,7 +39,7 @@ public class Kai : MonoBehaviour, IAlly
             Health h = t.GetComponent<Health>();
             if (h)
             {
-                h.Damage(Damage, DamageType, new Vector2(0, 0));
+                h.Damage(Damage, DamageType, new Vector2(0, 0), gameObject);
             }
         }
     }
