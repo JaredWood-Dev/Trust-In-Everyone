@@ -97,6 +97,7 @@ public class Health : MonoBehaviour
     {
         if (gameObject.CompareTag("Enemy"))
         {
+            print("enemy killed!");
             EventManager.EnemyKilled(gameObject, null);
         }
         Destroy(gameObject);

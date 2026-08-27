@@ -5,33 +5,16 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public Wave[] waves;
-    public float countdown = 1;
-    public float timeToNextWave = 1;
     public float timeToNextEnemy = 0.5f;
     public int currentWaveIndex = 0;
-    public bool isOver = false;
     public int enemyCount;
-    public int totalEnemyCount;
 
     [Header("Spawning")] 
     public Vector2[] spawnPositions;
 
     void Update()
     {
-        countdown -= Time.deltaTime;
-
-        if (countdown <= 0 && !isOver)
-        {
-            countdown = timeToNextWave;
-            //StartCoroutine(SpawnWave());
-        }
-
-        if (currentWaveIndex > waves.Length - 1)
-        {
-            StopCoroutine(SpawnWave());
-            isOver = true;
-            enabled = false;
-        }
+        
     }
 
     public IEnumerator SpawnWave()
@@ -56,6 +39,7 @@ public class WaveManager : MonoBehaviour
 
     public void EnemyKilled(GameObject target, GameObject killer)
     {
+        print("enemy killed");
         enemyCount--;
         if (enemyCount < 1)
         {
@@ -71,7 +55,7 @@ public class WaveManager : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.OnEnemyDeath += EnemyKilled;
+        EventManager.OnEnemyDeath -= EnemyKilled;
     }
 }
 

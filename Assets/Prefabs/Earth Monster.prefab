@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   aggressionDistance: 10
-  attackDistance: 1
+  attackDistance: 1.5
   movementSpeed: 3
   attackDamage: 5
   attackSpeed: 1
