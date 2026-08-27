@@ -20,6 +20,7 @@ public class Defend : AIState
         {
             if (Vector3.Distance(Ai.gameObject.transform.position, nearestEnemy.transform.position) < Ai.aggressionDistance)
             {
+                Ai.target = nearestEnemy;
                 Ai.RequestState(States.Attacking);
             }
         }

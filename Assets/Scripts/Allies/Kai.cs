@@ -33,7 +33,7 @@ public class Kai : MonoBehaviour, IAlly
         main.startRotation = direction;
         
         //Trigger an AOE damaging all enemies inside
-        Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position + (Vector3)offset, new Vector2(1, 3), direction,targetLayers);
+        Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position + (Vector3)offset, new Vector2(2, 4), direction,targetLayers);
         foreach (var t in targets)
         {
             Health h = t.GetComponent<Health>();

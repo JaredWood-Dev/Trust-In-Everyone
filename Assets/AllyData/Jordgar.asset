@@ -18,8 +18,8 @@ MonoBehaviour:
   initialDamage: 30
   damageType: 0
   initialAttackSpeed: 10
-  aggressionDistance: 7
-  attackDistance: 5
+  aggressionDistance: 10
+  attackDistance: 3
   initialMoveSpeed: 10
   initialHealth: 150
   initialRegen: 2

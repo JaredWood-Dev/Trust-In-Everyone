@@ -18,7 +18,7 @@ MonoBehaviour:
   initialDamage: 10
   damageType: 1
   initialAttackSpeed: 7
-  aggressionDistance: 5
+  aggressionDistance: 10
   attackDistance: 3
   initialMoveSpeed: 10
   initialHealth: 120

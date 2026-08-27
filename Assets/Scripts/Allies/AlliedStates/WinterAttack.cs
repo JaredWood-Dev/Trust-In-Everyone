@@ -12,7 +12,7 @@ public class WinterAttack : Attack
         //Stay Near Coal
         Ai.moveTo.SetDestination(Ai.player);
         
-        GameObject enemy = GameObjectLocator.FindNearestWithTag(Ai.player.gameObject, "Enemy");
+        GameObject enemy = Ai.target;
         if (enemy)
         {
             if (Vector3.Distance(Ai.gameObject.transform.position, enemy.transform.position) < Ai.attackDistance)
