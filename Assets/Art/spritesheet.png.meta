@@ -1620,7 +1620,7 @@ TextureImporter:
         width: 20
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 2, y: 4, z: 2, w: 4}
       customData: 
       outline: []
@@ -1629,6 +1629,94 @@ TextureImporter:
       bones: []
       spriteID: abe81510f43d1114dbbb3798a2cb61ca
       internalID: -2135377922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: defend_icon
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 924
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccbe11a18d3acd4ea6bc07892dbfa4c
+      internalID: -568789330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack_icon
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 924
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4597579df60f8742bcba5c840803fcd
+      internalID: -265533766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rally_flag_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 896
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677443c429fdd5f4297ace15e00f0d1f
+      internalID: -433663208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rally_flag_2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 888
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e490deaee52f624e8aaa4e38dee91a8
+      internalID: -1652358226
       vertices: []
       indices: 
       edges: []
@@ -1647,6 +1735,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      attack_icon: -265533766
       axe_icon: 2079689357
       axe_slash_1: -705556074
       axe_slash_2: 159535805
@@ -1663,6 +1752,7 @@ TextureImporter:
       coal_walk: -6251682230944352461
       cultist_idle: 1304923321
       cultist_walk: -1790345250
+      defend_icon: -568789330
       earth_chunk_1: 1853041008
       earth_chunk_2: 1022225776
       earth_chunk_3: 580243438
@@ -1704,6 +1794,8 @@ TextureImporter:
       path_7: 2132690715
       path_8: -710714906
       path_9: -2018011124
+      rally_flag_1: -433663208
+      rally_flag_2: -1652358226
       ui_button: 1587690333
       ui_button_disabled: -2135377922
       ui_button_pressed: -2101283915

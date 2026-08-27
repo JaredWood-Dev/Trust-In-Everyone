@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public float knockbackStrength;
     public LayerMask targetLayers;
     public ParticleSystem particles;
+    public ParticleSystem rallyFlag;
 
     [NonSerialized]
     public float _attackTimer;
@@ -68,6 +69,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Vector2 mousePos = Mouse.current.position.ReadValue(); 
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            ParticleSystem flag = Instantiate(rallyFlag, mousePos, Quaternion.identity);
             var objectHit = Physics2D.Raycast(mousePos, Vector2.zero, 10, targetLayers);
             if (objectHit.collider)
             {
