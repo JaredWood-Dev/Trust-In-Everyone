@@ -6,5 +6,6 @@
     EnemyFollowing,
     EnemyAttacking,
     EnemyStunned,
-    Retreating
+    Retreating,
+    AttackingPoint
 }

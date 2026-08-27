@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using Vector2 = System.Numerics.Vector2;
 
 public class EventManager : MonoBehaviour
 {

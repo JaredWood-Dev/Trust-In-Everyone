@@ -69,10 +69,14 @@ public class PlayerAttack : MonoBehaviour
             Vector2 mousePos = Mouse.current.position.ReadValue(); 
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             var objectHit = Physics2D.Raycast(mousePos, Vector2.zero, 10, targetLayers);
-            if (objectHit)
+            if (objectHit.collider)
+            {
                 EventManager.AttackOrder(objectHit.collider.gameObject);
+            }
             else
-                EventManager.PointOrder(new System.Numerics.Vector2(mousePos.x, mousePos.y));
+            {
+                EventManager.PointOrder(mousePos);
+            }
         }
         
         _attackTimer += Time.deltaTime;

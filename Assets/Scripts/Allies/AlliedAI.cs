@@ -1,7 +1,6 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
-using Vector2 = System.Numerics.Vector2;
 
 public class AlliedAI : MonoBehaviour
 {
@@ -15,6 +14,8 @@ public class AlliedAI : MonoBehaviour
     public IAlly ally;
     public MoveTo moveTo;
     
+    [NonSerialized]
+    public Vector2 destination;
     
     private AIState currentState;
     [NonSerialized]
@@ -60,6 +61,9 @@ public class AlliedAI : MonoBehaviour
             case States.Retreating:
                 currentState = new Retreat(this);
                 break;
+            case States.AttackingPoint:
+                currentState = new Neutral(this);
+                break;
         }
         currentState.Enter();
     }
@@ -69,13 +73,31 @@ public class AlliedAI : MonoBehaviour
         RequestState(States.Retreating);
     }
 
+    void AttackPoint(GameObject newTarget)
+    {
+        target = newTarget;
+        RequestState(States.Attacking);
+    }
+
+    void MovePoint(Vector2 location)
+    {
+        print("moving to" + location);
+       
+        RequestState(States.AttackingPoint);
+        destination = location;
+    }
+
     void OnEnable()
     {
         EventManager.OnDefendOrder += Retreat;
+        EventManager.OnAttackOrder += AttackPoint;
+        EventManager.OnPointOrder += MovePoint;
     }
 
     void OnDisable()
     {
         EventManager.OnDefendOrder -= Retreat;
+        EventManager.OnAttackOrder -= AttackPoint;
+        EventManager.OnPointOrder -= MovePoint;
     }
 }
