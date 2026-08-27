@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
     {
         if (upgradePoints > 0)
         {
+            //linear upgrade
             party[slot].AllyData.health += 1;
             upgradePoints--;
         }
@@ -141,7 +142,8 @@ public class GameManager : MonoBehaviour
     {
         if (upgradePoints > 0)
         {
-            party[slot].AllyData.moveSpeed += 1;
+            //linear
+            party[slot].AllyData.moveSpeed += 0.5f;
             upgradePoints--;
         }
         
@@ -152,6 +154,7 @@ public class GameManager : MonoBehaviour
     {
         if (upgradePoints > 0)
         {
+            //linear upgrade
             party[slot].AllyData.damage += 1;
             upgradePoints--;
         }
@@ -163,7 +166,8 @@ public class GameManager : MonoBehaviour
     {
         if (upgradePoints > 0)
         {
-            party[slot].AllyData.attackSpeed += 1;
+            //linear
+            party[slot].AllyData.attackSpeed -= 0.5f;
             upgradePoints--;
         }
         
@@ -174,6 +178,7 @@ public class GameManager : MonoBehaviour
     {
         if (upgradePoints > 0)
         {
+            //linear
             party[slot].AllyData.regen += 1;
             upgradePoints--;
         }
@@ -191,8 +196,8 @@ public class GameManager : MonoBehaviour
             statCounters[i].healthText.text = party[i].AllyData.health.ToString();
             statCounters[i].damageText.text = party[i].AllyData.damage.ToString();
             statCounters[i].regenText.text = party[i].AllyData.regen.ToString();
-            statCounters[i].attackSpeedText.text = party[i].AllyData.attackSpeed.ToString();
-            statCounters[i].moveSpeedText.text = party[i].AllyData.moveSpeed.ToString();
+            statCounters[i].attackSpeedText.text = party[i].AllyData.attackSpeed.ToString("F2");
+            statCounters[i].moveSpeedText.text = party[i].AllyData.moveSpeed.ToString("F2");
             statCounters[i].icon.sprite = party[i].AllyData.allyIcon;
             statCounters[i].name.text = party[i].AllyData.name;
             
