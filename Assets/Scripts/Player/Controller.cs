@@ -41,11 +41,11 @@ public class Controller : MonoBehaviour
             _an.SetBool("isWalking", false);
         }
 
-        if (_rb.linearVelocityX < 0)
+        if (_movement.x < 0)
         {
             _sr.flipX = true;
         }
-        if (_rb.linearVelocityX > 0)
+        if (_movement.x > 0)
         {
             _sr.flipX = false;
         }
