@@ -56,7 +56,6 @@ public class Health : MonoBehaviour
     
     public void Damage(int damage, DamageTypes damageType, Vector2 knockback, GameObject attacker = null)
     {
-        EventManager.CreatureHit(gameObject, attacker, damage, damageType);
         _sr.material = hitFlash;
         Invoke(nameof(ResetMaterial), 0.1f);
 
@@ -71,10 +70,12 @@ public class Health : MonoBehaviour
         if (Resistances.Contains(damageType))
         {
             ChangeHealth(-(damage / 2));
+            EventManager.CreatureHit(gameObject, attacker, damage / 2, damageType);
         }
         else
         {
             ChangeHealth(-damage);
+            EventManager.CreatureHit(gameObject, attacker, damage, damageType);
         }
 
         if (_rb)

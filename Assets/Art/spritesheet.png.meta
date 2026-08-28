@@ -1686,7 +1686,7 @@ TextureImporter:
         width: 4
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1708,7 +1708,7 @@ TextureImporter:
         width: 4
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1717,6 +1717,160 @@ TextureImporter:
       bones: []
       spriteID: 6e490deaee52f624e8aaa4e38dee91a8
       internalID: -1652358226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magmancer_idle
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 882
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47288cf29809584ab052d4e376dcfdd
+      internalID: 1772627665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magmancer_walk
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 882
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6749dc65b995f0143af51b98a1037976
+      internalID: -1464303872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magma_blob
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 982
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5cea2f04fdb458478fa253632d0189e
+      internalID: -1269844938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magma_drop_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 987
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de9fd5e068f5ac4e8947ff4145631e3
+      internalID: 46913612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magma_drop_2
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 986
+        width: 1
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa07055361fb354cb45d8410bffe40b
+      internalID: -730360752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magma_drop_3
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 979
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647e9814fe11aba4b9aa58c0ab6b0da6
+      internalID: -804366908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magma_drop_4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 979
+        width: 2
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cd4140f8fb59f438de7cf756abb041
+      internalID: -295433454
       vertices: []
       indices: 
       edges: []
@@ -1784,6 +1938,13 @@ TextureImporter:
       kai_walk: -436777667
       lightning_bolt_1: 1971270920
       lightning_bolt_2: -1741987599
+      magma_blob: -1269844938
+      magma_drop_1: 46913612
+      magma_drop_2: -730360752
+      magma_drop_3: -804366908
+      magma_drop_4: -295433454
+      magmancer_idle: 1772627665
+      magmancer_walk: -1464303872
       path_1: 1404745838
       path_10: -2112232278
       path_2: -506236911

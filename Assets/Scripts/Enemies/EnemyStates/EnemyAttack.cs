@@ -7,6 +7,11 @@ public class EnemyAttack : AIState
         EAi = ai;
     }
 
+    public EnemyAttack()
+    {
+        
+    }
+
     public override void Update()
     {
         if (EAi.target)

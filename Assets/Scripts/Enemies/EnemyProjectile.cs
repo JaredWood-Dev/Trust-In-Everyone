@@ -1,0 +1,38 @@
+﻿using System;
+using UnityEngine;
+
+public class EnemyProjectile : MonoBehaviour
+{
+    public int damage;
+    public DamageTypes damageType;
+    public Vector2 velocity;
+    public float knockback;
+    public GameObject attacker;
+    
+    private Rigidbody2D _rb;
+
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        Invoke(nameof(DestroyProjectile), 2f);
+    }
+
+    private void Update()
+    {
+        _rb.linearVelocity = velocity;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ally") || collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Health>().Damage(damage, damageType, velocity.normalized * knockback, attacker);
+            Destroy(gameObject);
+        }
+    }
+
+    void DestroyProjectile()
+    {
+        Destroy(gameObject);
+    }
+}

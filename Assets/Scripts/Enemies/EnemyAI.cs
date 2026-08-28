@@ -18,7 +18,8 @@ public class EnemyAI : MonoBehaviour
     public GameObject target;
     public MoveTo moveTo;
 
-    private AIState _currentState;
+    [NonSerialized]
+    public AIState _currentState;
     [NonSerialized]
     public float AttackTimer;
 
@@ -38,11 +39,9 @@ public class EnemyAI : MonoBehaviour
         _currentState.Update();
         
         AttackTimer += Time.deltaTime;
-        print(_currentState);
-        print(target);
     }
 
-    public void RequestState(States state)
+    public virtual void RequestState(States state)
     {
         _currentState.Exit();
         switch (state)
@@ -70,7 +69,6 @@ public class EnemyAI : MonoBehaviour
         
         if (victim == gameObject)
         {
-            print("setting target to: " + attacker.name);
             RequestState(States.EnemyStunned);
             target = attacker;
         }
