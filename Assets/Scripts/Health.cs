@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
+    private Animator _anim;
     
     void Start()
     {
@@ -33,6 +34,7 @@ public class Health : MonoBehaviour
         
         _rb = GetComponent<Rigidbody2D>();
         _sr = GetComponent<SpriteRenderer>();
+        _anim = GetComponent<Animator>();
         
         _defaultMaterial = GetComponent<SpriteRenderer>().material;
         
@@ -86,7 +88,9 @@ public class Health : MonoBehaviour
 
     public void Regenerate()
     {
-        ChangeHealth(1);
+        //only regen if alive
+        if (health > 0)
+            ChangeHealth(1);
     }
 
     public void ResetMaterial()
@@ -99,7 +103,27 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Enemy"))
         {
             EventManager.EnemyKilled(gameObject, null);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+
+        if (gameObject.CompareTag("Ally"))
+        {
+            _anim.SetBool("isDead", true);
+            gameObject.GetComponent<AlliedAI>().RequestState(States.Dead);
+            gameObject.tag = "Untagged";
+            health = 0;
+        }
+        //Destroy(gameObject);
+    }
+
+    public void Ressurect()
+    {
+        health = maxHealth;
+        if (_anim)
+        {
+            _anim.SetBool("isDead", false);
+        }
+
+        gameObject.tag = "Ally";
     }
 }

@@ -1774,7 +1774,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1796,7 +1796,7 @@ TextureImporter:
         width: 1
         height: 1
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1818,7 +1818,7 @@ TextureImporter:
         width: 1
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1840,7 +1840,7 @@ TextureImporter:
         width: 2
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1862,7 +1862,7 @@ TextureImporter:
         width: 2
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1871,6 +1871,94 @@ TextureImporter:
       bones: []
       spriteID: b9cd4140f8fb59f438de7cf756abb041
       internalID: -295433454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: garf_unconsious
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 987
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef60bae7bcad524ea7e159119b7bbe1
+      internalID: 968774782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jordgar_unconsious
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 968
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bfc42c92aa5b444a9dcdde953db865b
+      internalID: -181466939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kai_unconcious
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 955
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be16b605041639499227f507b86d5b2
+      internalID: 1830034853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: winter_unconsious
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 938
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3f694d8c4f67a4c88f350269b7bc3f
+      internalID: -1701669476
       vertices: []
       indices: 
       edges: []
@@ -1926,15 +2014,18 @@ TextureImporter:
       frost_bolt: -1440341349
       garf_icon: 1801382620
       garf_idle: 137348925
+      garf_unconsious: 968774782
       garf_walk: -1780335767
       grass: -1840000783
       grass_1: -1044354312
       grass_2: 929315212
       jordgar_icon: -1849959097
       jordgar_idle: 882363397
+      jordgar_unconsious: -181466939
       jordgar_walk: 2114356311
       kai_icon: -963928635
       kai_idle: 712316151
+      kai_unconcious: 1830034853
       kai_walk: -436777667
       lightning_bolt_1: 1971270920
       lightning_bolt_2: -1741987599
@@ -1968,6 +2059,7 @@ TextureImporter:
       water_4: -208926689
       winter_icon: 198293949
       winter_idle: -273603074
+      winter_unconsious: -1701669476
       winter_walk: -1527898079
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

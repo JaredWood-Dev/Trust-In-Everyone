@@ -7,5 +7,6 @@
     EnemyAttacking,
     EnemyStunned,
     Retreating,
-    AttackingPoint
+    AttackingPoint,
+    Dead
 }

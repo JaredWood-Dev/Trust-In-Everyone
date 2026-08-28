@@ -33,14 +33,14 @@ public class WaveManager : MonoBehaviour
 
     public void StartWave()
     {
-        if (currentWaveIndex < waves.Length - 1)
+        if (currentWaveIndex < waves.Length)
             StartCoroutine(SpawnWave());
     }
 
     public void EnemyKilled(GameObject target, GameObject killer)
     {
         enemyCount--;
-        if (enemyCount < 1)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             EventManager.WaveEnd();
         }

@@ -64,6 +64,9 @@ public class AlliedAI : MonoBehaviour
             case States.AttackingPoint:
                 currentState = new Neutral(this);
                 break;
+            case States.Dead:
+                currentState = new Unconsious(this);
+                break;
         }
         currentState.Enter();
     }

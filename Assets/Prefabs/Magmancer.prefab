@@ -112,9 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee63f3545b4260408a030eb18276960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  health: 1000
-  maxHealth: 1000
-  regen: 100
+  health: 50
+  maxHealth: 50
+  regen: 1
   hitParticles: {fileID: 1008133084095626066, guid: fdc41e4f8500b4844966105192483607, type: 3}
   hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 01000000
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MagmancerAI
   aggressionDistance: 25
   attackDistance: 20
-  movementSpeed: 5
+  movementSpeed: 7
   attackDamage: 15
   attackSpeed: 1
   knockback: 10

@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
             party[i].allyIcon.sprite = party[i].ally.GetComponent<AlliedStatManager>().allyData.allyIcon;
             party[i].allyBar.color = party[i].ally.GetComponent<AlliedStatManager>().allyData.allyColor;
             party[i].AllyData = party[i].ally.GetComponent<AlliedStatManager>().allyData;
+            party[i].AlliedAI = party[i].ally.GetComponent<AlliedAI>();
         }
         
         upgradeScreen.SetActive(false);
@@ -108,7 +109,6 @@ public class GameManager : MonoBehaviour
         }
 
         waveCounter.text = _waveManager.currentWaveIndex.ToString();
-        remainingCounter.text = _waveManager.enemyCount.ToString();
 
         float abilityPercent = 1 - Mathf.Min(_pltAttack._attackTimer, _pltAttack.attackSpeed) / _pltAttack.attackSpeed;
         abilityFill.rectTransform.sizeDelta = new Vector2(100, abilityPercent * 100f);
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
 
     void EnemyDied(GameObject target, GameObject killer)
     {
-        
+        remainingCounter.text = GameObject.FindGameObjectsWithTag("Enemy").Length.ToString();
     }
 
     public void TriggerWave()
@@ -124,6 +124,12 @@ public class GameManager : MonoBehaviour
         nextWaveButton.SetActive(false);
         _waveManager.StartWave();
         upgradeScreen.SetActive(false);
+
+        foreach (var member in party)
+        {
+            member.HealthComponent.Ressurect();
+            member.AlliedAI.RequestState(States.Defending);
+        }
     }
 
     public void UpdateHealth(int slot)
@@ -270,6 +276,8 @@ public class AllyDataContainer
     public AllyData AllyData;
     [NonSerialized]
     public Health HealthComponent;
+    [NonSerialized]
+    public AlliedAI AlliedAI;
     [Header("UI Elements")] 
     public GameObject HUDcontainer;
     public Image allyIcon;
