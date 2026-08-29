@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
 
     void EnemyDied(GameObject target, GameObject killer)
     {
-        remainingCounter.text = GameObject.FindGameObjectsWithTag("Enemy").Length.ToString();
+        remainingCounter.text = (GameObject.FindGameObjectsWithTag("Enemy").Length - 1).ToString();
     }
 
     public void TriggerWave()
