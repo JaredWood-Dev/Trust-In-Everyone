@@ -106,7 +106,11 @@ public class Health : MonoBehaviour
             {
                 EventManager.BossDied();
             }
-            EventManager.EnemyKilled(gameObject, null);
+            else
+            {
+                EventManager.EnemyKilled(gameObject, null);
+            }
+
             Destroy(gameObject);
         }
 

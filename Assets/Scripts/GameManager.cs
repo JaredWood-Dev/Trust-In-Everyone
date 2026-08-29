@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     public StatPanel[] statCounters;
     public int upgradePoints = 0;
     public TMP_Text upgradePointsText;
+
+    public GameObject bossUI;
+    public Image bossBarFill;
+    private GameObject _boss;
     
     void CreatureHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
     {
@@ -108,6 +112,12 @@ public class GameManager : MonoBehaviour
             party[i].allyBar.fillAmount = fillpercent;
         }
 
+        if (bossUI.activeInHierarchy)
+        {
+            float bossFill = (float)_boss.GetComponent<Health>().health / _boss.GetComponent<Health>().maxHealth;
+            bossBarFill.fillAmount = bossFill;
+        }
+
         waveCounter.text = _waveManager.currentWaveIndex.ToString();
 
         float abilityPercent = 1 - Mathf.Min(_pltAttack._attackTimer, _pltAttack.attackSpeed) / _pltAttack.attackSpeed;
@@ -130,6 +140,9 @@ public class GameManager : MonoBehaviour
             member.HealthComponent.Ressurect();
             member.AlliedAI.RequestState(States.Defending);
         }
+
+        _boss = _waveManager.boss;
+        bossUI.SetActive(true);
     }
 
     public void UpdateHealth(int slot)

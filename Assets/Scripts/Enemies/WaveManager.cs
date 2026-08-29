@@ -11,6 +11,10 @@ public class WaveManager : MonoBehaviour
     public Dialogue wave1Dialogue;
     public Dialogue wave2Dialogue;
     public Dialogue wave5Dialogue;
+    public Dialogue wave10Dialogue;
+    public Dialogue postBossDialogue;
+    
+    public GameObject boss;
 
     [Header("Spawning")] 
     public Vector2[] spawnPositions;
@@ -22,16 +26,21 @@ public class WaveManager : MonoBehaviour
 
     public IEnumerator SpawnWave()
     {
-        enemyCount = waves[currentWaveIndex].enemies.Length;
-        
-        foreach (EnemyAI enemy in waves[currentWaveIndex].enemies)
-        {
-            Vector2 randomSpawn = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)];
-            GameObject e = Instantiate(enemy.gameObject, randomSpawn, Quaternion.identity);
-            
-            yield return new WaitForSeconds(timeToNextEnemy);
-        }
         currentWaveIndex++;
+        if (currentWaveIndex < waves.Length)
+        {
+
+            enemyCount = waves[currentWaveIndex].enemies.Length;
+
+            foreach (EnemyAI enemy in waves[currentWaveIndex].enemies)
+            {
+                Vector2 randomSpawn = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length)];
+                GameObject e = Instantiate(enemy.gameObject, randomSpawn, Quaternion.identity);
+
+                yield return new WaitForSeconds(timeToNextEnemy);
+            }
+        }
+
     }
 
     public void StartWave()
@@ -50,6 +59,13 @@ public class WaveManager : MonoBehaviour
         {
             FindObjectOfType<DialogueManager>().StartDialogue(wave5Dialogue);
         }
+
+        if (currentWaveIndex == 8)
+        {
+            FindObjectOfType<DialogueManager>().StartDialogue(wave10Dialogue);
+            boss = Instantiate(boss, new Vector3(0, 0, 0), Quaternion.identity);
+            currentWaveIndex++;
+        }
         
         if (currentWaveIndex < waves.Length)
             StartCoroutine(SpawnWave());
@@ -65,14 +81,21 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    void BossDied()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(postBossDialogue);
+    }
+
     private void OnEnable()
     {
         EventManager.OnEnemyDeath += EnemyKilled;
+        EventManager.OnBossDied += BossDied;
     }
 
     private void OnDisable()
     {
         EventManager.OnEnemyDeath -= EnemyKilled;
+        EventManager.OnBossDied -= BossDied;
     }
 }
 
