@@ -439,6 +439,7 @@ MonoBehaviour:
   speakerImage: {fileID: 973093227}
   speakerFrame: {fileID: 1765617857}
   speakerButton: {fileID: 1520411558}
+  loadNextScene: 1
 --- !u!4 &1682111624
 Transform:
   m_ObjectHideFlags: 0

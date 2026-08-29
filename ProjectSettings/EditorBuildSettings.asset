@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 795350d232c8b3a4385fa8b730306ca8
   - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: 53fd910e111dc694ea37b315763af144
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: e19bcb690e186414b9f4c234e1c91bf7
+  - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

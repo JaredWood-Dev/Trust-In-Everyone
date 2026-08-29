@@ -2,6 +2,7 @@ using System;
 using Enums;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SelectorManager : MonoBehaviour
@@ -55,6 +56,11 @@ public class SelectorManager : MonoBehaviour
             currentTeam.team[i] = characterPrefabs[characterSelectors[i].dropdown.value];
             
         }
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(3);
     }
 }
 

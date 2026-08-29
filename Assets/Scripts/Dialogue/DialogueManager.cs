@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public Image speakerImage;
     public Image speakerFrame;
     public UnityEngine.UI.Button speakerButton;
+    public bool loadNextScene = false;
     
     private Queue<DialogueSegment> _dialogueSegments;
 
@@ -86,5 +88,9 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         Time.timeScale = 1;
         print("End of Dialogue");
+        if (loadNextScene)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }
