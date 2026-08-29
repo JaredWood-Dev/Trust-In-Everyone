@@ -102,6 +102,10 @@ public class Health : MonoBehaviour
     {
         if (gameObject.CompareTag("Enemy"))
         {
+            if (gameObject.GetComponent<BossAI>())
+            {
+                EventManager.BossDied();
+            }
             EventManager.EnemyKilled(gameObject, null);
             Destroy(gameObject);
         }

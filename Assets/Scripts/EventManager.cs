@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     public static event Action OnDefendOrder;
     public static event Action<GameObject> OnAttackOrder;
     public static event Action<Vector2> OnPointOrder;
+    public static event Action OnBossDied;
 
     public static void CreatureHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType = DamageTypes.Physical)
     {
@@ -38,5 +39,10 @@ public class EventManager : MonoBehaviour
     public static void PointOrder(Vector2 location)
     {
         OnPointOrder?.Invoke(location);
+    }
+
+    public static void BossDied()
+    {
+        OnBossDied?.Invoke();
     }
 }

@@ -38,7 +38,10 @@ public class MoveTo : MonoBehaviour
 
     public void SetDestination(Vector2 destination)
     {
-        _ai.destination = destination;
+        if (_ai)
+        {
+            _ai.destination = destination;
+        }
     }
 
     public virtual void SetDestination(GameObject obj)

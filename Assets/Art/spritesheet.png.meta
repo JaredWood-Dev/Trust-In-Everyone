@@ -2148,7 +2148,7 @@ TextureImporter:
         width: 105
         height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2157,6 +2157,116 @@ TextureImporter:
       bones: []
       spriteID: 5a33786d0ad94cd4a8fc2a05f530402b
       internalID: 886143300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_idle
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 842
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbfee4c26051034ea3bc8c380683aa0
+      internalID: -1359572546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_walk
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 842
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf19b6f0e3dea54cabea29d299a4387
+      internalID: 1615334034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boulder
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 888
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6885ea2ca34783248b95855be1c2831b
+      internalID: 1037455666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stomp_begin
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 798
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae57d4ce55d8ec4d9b8284eca581012
+      internalID: -1497702022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stomp_end
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 795
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a639db8a1390a245b0d28db5a2bdb21
+      internalID: 436782275
       vertices: []
       indices: 
       edges: []
@@ -2184,6 +2294,9 @@ TextureImporter:
       bar_fill: 1590968506
       blood: -246731444
       blood_1: 997911372
+      boss_idle: -1359572546
+      boss_walk: 1615334034
+      boulder: 1037455666
       cell: 1972243215
       cliff: 1905166963
       cliff_2: -1719089440
@@ -2253,6 +2366,8 @@ TextureImporter:
       path_9: -2018011124
       rally_flag_1: -433663208
       rally_flag_2: -1652358226
+      stomp_begin: -1497702022
+      stomp_end: 436782275
       title_screen: 886143300
       ui_button: 1587690333
       ui_button_disabled: -2135377922
