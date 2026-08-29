@@ -9,7 +9,9 @@ public class AllyData : ScriptableObject
     [Header("Cosmetics")] 
     public Color allyColor;
     public Sprite allyIcon;
+    public string species;
     [Header("Combat")] 
+    public string attackName;
     public int initialDamage;
     [NonSerialized]
     public int damage;

@@ -15,6 +15,8 @@ MonoBehaviour:
   allyName: Winter
   allyColor: {r: 0.6862745, g: 0.90196085, b: 1, a: 1}
   allyIcon: {fileID: 198293949, guid: e47fa93cc6cbfbd4a934dc11547498cc, type: 3}
+  species: Dragonborn
+  attackName: Ice Bolt
   initialDamage: 5
   damageType: 2
   initialAttackSpeed: 1

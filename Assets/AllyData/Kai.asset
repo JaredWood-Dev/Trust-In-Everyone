@@ -15,6 +15,8 @@ MonoBehaviour:
   allyName: Kai
   allyColor: {r: 0.6901961, g: 0.18039216, b: 0.35686275, a: 1}
   allyIcon: {fileID: -963928635, guid: e47fa93cc6cbfbd4a934dc11547498cc, type: 3}
+  species: Dragonborn
+  attackName: Flamethrower
   initialDamage: 10
   damageType: 1
   initialAttackSpeed: 7

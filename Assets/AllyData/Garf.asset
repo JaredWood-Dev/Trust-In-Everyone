@@ -15,6 +15,8 @@ MonoBehaviour:
   allyName: Garf
   allyColor: {r: 0.3019608, g: 0.6509804, b: 0.9960785, a: 1}
   allyIcon: {fileID: 1801382620, guid: e47fa93cc6cbfbd4a934dc11547498cc, type: 3}
+  species: Dragonborn
+  attackName: Lightning Bolt
   initialDamage: 15
   damageType: 3
   initialAttackSpeed: 5

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4232ee1c0c1be414c866e89fbc3ea9e1, type: 3}
+  m_Name: Party
+  m_EditorClassIdentifier: Assembly-CSharp::TeamData
+  team:
+  - {fileID: 7303696339427322259, guid: a9e00b60507de2747ae640c7d68b25f9, type: 3}
+  - {fileID: 2224500595254220169, guid: 8c7287d194d3bac41a6b7bc0f7d1cbf2, type: 3}
+  - {fileID: 8363125143545773333, guid: fe88a7cbb38682347ad102e310148e8f, type: 3}
+  - {fileID: 4930979538709542710, guid: 161b4a2b7e9c090429a8b3880960d93e, type: 3}
+  defaultParty:
+  - {fileID: 7303696339427322259, guid: a9e00b60507de2747ae640c7d68b25f9, type: 3}
+  - {fileID: 2224500595254220169, guid: 8c7287d194d3bac41a6b7bc0f7d1cbf2, type: 3}
+  - {fileID: 8363125143545773333, guid: fe88a7cbb38682347ad102e310148e8f, type: 3}
+  - {fileID: 4930979538709542710, guid: 161b4a2b7e9c090429a8b3880960d93e, type: 3}
