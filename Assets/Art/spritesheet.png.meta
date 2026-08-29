@@ -2126,7 +2126,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2135,6 +2135,28 @@ TextureImporter:
       bones: []
       spriteID: e2af9237592a9ed49b082242559bc39d
       internalID: 1915287571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: title_screen
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 903
+        width: 105
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a33786d0ad94cd4a8fc2a05f530402b
+      internalID: 886143300
       vertices: []
       indices: 
       edges: []
@@ -2231,6 +2253,7 @@ TextureImporter:
       path_9: -2018011124
       rally_flag_1: -433663208
       rally_flag_2: -1652358226
+      title_screen: 886143300
       ui_button: 1587690333
       ui_button_disabled: -2135377922
       ui_button_pressed: -2101283915
