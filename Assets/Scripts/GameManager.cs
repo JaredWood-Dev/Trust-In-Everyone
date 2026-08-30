@@ -135,6 +135,8 @@ public class GameManager : MonoBehaviour
 
     public void TriggerWave()
     {
+
+        remainingCounter.text = _waveManager.waves[_waveManager.currentWaveIndex].enemies.Length.ToString();
         nextWaveButton.SetActive(false);
         _waveManager.StartWave();
         upgradeScreen.SetActive(false);
