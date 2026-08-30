@@ -8,11 +8,13 @@ public class Jordgar : MonoBehaviour, IAlly
     public DamageTypes DamageType { get; set; }
     
     public float AttackSpeed { get; set; }
+    public AudioClip AttackSound;
     public float knockback;
     public float stompRadius;
 
     public LayerMask targetLayers;
     public ParticleSystem stompParticles;
+    private AudioSource _audioSource;
     
     public Attack CharacterAttack { get; set; }
 
@@ -20,6 +22,14 @@ public class Jordgar : MonoBehaviour, IAlly
 
     public void Attack()
     {
+        if (_audioSource)
+        {
+            _audioSource.clip = AttackSound;
+            float defaultPitch = 1;
+            float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
+            _audioSource.pitch = defaultPitch + randomPitch;
+            _audioSource.Play();
+        }
         //Easy, no directionality required
         Instantiate(stompParticles, transform.position, Quaternion.identity);
         //This one is easy, it dosen't rely on any enemy location calculations - when to stop will be handled by the AI controller
@@ -37,6 +47,7 @@ public class Jordgar : MonoBehaviour, IAlly
     
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()

@@ -19,7 +19,7 @@ MonoBehaviour:
   attackName: Earthquake
   initialDamage: 30
   damageType: 0
-  initialAttackSpeed: 10
+  initialAttackSpeed: 8
   aggressionDistance: 10
   attackDistance: 3
   initialMoveSpeed: 10

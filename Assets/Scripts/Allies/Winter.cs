@@ -8,8 +8,10 @@ public class Winter : MonoBehaviour, IAlly
     public DamageTypes DamageType { get; set; }
     
     public float AttackSpeed { get; set; }
+    public AudioClip AttackSound;
     public float knockback;
     public float projectileSpeed;
+    private AudioSource _audioSource;
 
     public GameObject projectile;
     
@@ -19,6 +21,14 @@ public class Winter : MonoBehaviour, IAlly
     
     public void Attack()
     {
+        if (_audioSource)
+        {
+            _audioSource.clip = AttackSound;
+            float defaultPitch = 1;
+            float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
+            _audioSource.pitch = defaultPitch + randomPitch;
+            _audioSource.Play();
+        }
         GameObject target = GameObjectLocator.FindNearestWithTag(gameObject, "Enemy");
         
         Vector2 diff = target.transform.position - transform.position;
@@ -38,6 +48,7 @@ public class Winter : MonoBehaviour, IAlly
     void Start()
     {
         CharacterAttack = new WinterAttack(gameObject.GetComponent<AlliedAI>());
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()

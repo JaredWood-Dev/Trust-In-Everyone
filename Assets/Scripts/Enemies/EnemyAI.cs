@@ -17,6 +17,8 @@ public class EnemyAI : MonoBehaviour
     public GameObject player;
     public GameObject target;
     public MoveTo moveTo;
+    public AudioClip attackSound;
+    public AudioSource audioSource;
 
     [NonSerialized]
     public AIState _currentState;
@@ -28,6 +30,7 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         moveTo = GetComponent<MoveTo>();
         moveTo.SetSpeed(movementSpeed);
+        audioSource = GetComponent<AudioSource>();
 
         //default state
         _currentState = new EnemySearch(this);

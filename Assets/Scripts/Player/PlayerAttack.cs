@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask targetLayers;
     public ParticleSystem particles;
     public ParticleSystem rallyFlag;
+    public AudioClip attackSound;
 
     [NonSerialized]
     public float _attackTimer;
@@ -20,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
     private InputAction _attackAction;
     private InputAction _attackOrder;
     private InputAction _defendOrder;
+    private AudioSource _audioSource;
 
     void Start()
     {
@@ -28,12 +30,21 @@ public class PlayerAttack : MonoBehaviour
         _defendOrder = InputSystem.actions.FindAction("Command Defend");
         
         _rn = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (_attackAction.WasPressedThisFrame() && _attackTimer > attackSpeed)
         {
+            if (_audioSource)
+            {
+                _audioSource.clip = attackSound;
+                float defaultPitch = 1;
+                float randomPitch = UnityEngine.Random.Range(0, 0.4f);
+                _audioSource.pitch = defaultPitch + randomPitch;
+                _audioSource.Play();
+            }
             //Damage Targets
             RaycastHit2D[] targets;
             Vector2 boxSize = new Vector2(2, 2);

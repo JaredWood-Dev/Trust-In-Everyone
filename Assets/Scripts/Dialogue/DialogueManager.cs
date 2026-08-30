@@ -16,11 +16,13 @@ public class DialogueManager : MonoBehaviour
     public bool loadNextScene = false;
     
     private Queue<DialogueSegment> _dialogueSegments;
+    private AudioSource _audioSource;
 
     void Start()
     {
         //dialogueBox.SetActive(false);
         _dialogueSegments = new Queue<DialogueSegment>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -41,6 +43,11 @@ public class DialogueManager : MonoBehaviour
 
     public void NextSentence()
     {
+        if (_audioSource)
+        {
+            _audioSource.Play();
+        }
+        
         if (_dialogueSegments.Count == 0)
         {
             EndDialogue();

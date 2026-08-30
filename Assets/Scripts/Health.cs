@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Health : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Health : MonoBehaviour
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
     private Animator _anim;
+    public AudioClip hurtSound;
+    private AudioSource _audioSource;
     
     void Start()
     {
@@ -35,6 +38,7 @@ public class Health : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _sr = GetComponent<SpriteRenderer>();
         _anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         
         _defaultMaterial = GetComponent<SpriteRenderer>().material;
         
@@ -59,6 +63,12 @@ public class Health : MonoBehaviour
     public void Damage(int damage, DamageTypes damageType, Vector2 knockback, GameObject attacker = null)
     {
         _sr.material = hitFlash;
+        if (_audioSource)
+        {
+            _audioSource.clip = hurtSound;
+            _audioSource.Play();
+        }
+
         Invoke(nameof(ResetMaterial), 0.1f);
 
         if (hitParticles)

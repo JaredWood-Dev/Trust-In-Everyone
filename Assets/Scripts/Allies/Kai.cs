@@ -7,12 +7,14 @@ public class Kai : MonoBehaviour, IAlly
     public DamageTypes DamageType { get; set; }
     
     public float AttackSpeed { get; set; }
+    public AudioClip AttackSound;
     
     //Direction to aim the fire
     [Header("Targeting")]
     public float direction;
     public LayerMask targetLayers;
     public ParticleSystem fireParticles;
+    private AudioSource _audioSource;
     
     public Attack CharacterAttack { get; set; }
 
@@ -20,6 +22,14 @@ public class Kai : MonoBehaviour, IAlly
     
     public void Attack()
     {
+        if (_audioSource)
+        {
+            _audioSource.clip = AttackSound;
+            float defaultPitch = 1;
+            float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
+            _audioSource.pitch = defaultPitch + randomPitch;
+            _audioSource.Play();
+        }
         //Calculate rotation based on enemies
         GameObject target = GameObjectLocator.FindNearestWithTag(gameObject, "Enemy");
         Vector2 diff = (target.transform.position - transform.position).normalized;
@@ -46,6 +56,7 @@ public class Kai : MonoBehaviour, IAlly
     
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()

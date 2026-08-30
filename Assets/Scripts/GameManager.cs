@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject bossUI;
     public Image bossBarFill;
     private GameObject _boss;
+    private AudioSource _audioSource;
     
     void CreatureHit(GameObject target, GameObject attacker, int damage, DamageTypes damageType)
     {
@@ -99,6 +100,8 @@ public class GameManager : MonoBehaviour
         }
         
         upgradeScreen.SetActive(false);
+        
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -141,8 +144,13 @@ public class GameManager : MonoBehaviour
             member.AlliedAI.RequestState(States.Defending);
         }
 
-        _boss = _waveManager.boss;
-        bossUI.SetActive(true);
+        if (_waveManager.currentWaveIndex == 9)
+        {
+            _boss = _waveManager.boss;
+            bossUI.SetActive(true);
+        }
+
+        _audioSource.Play();
     }
 
     public void UpdateHealth(int slot)

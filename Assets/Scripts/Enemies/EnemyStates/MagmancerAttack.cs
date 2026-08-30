@@ -22,6 +22,14 @@ public class MagmancerAttack : EnemyAttack
             {
                 if (MAi.AttackTimer > MAi.attackSpeed)
                 {
+                    if (MAi.audioSource)
+                    {
+                        MAi.audioSource.clip = MAi.attackSound;
+                        float defaultPitch = 1;
+                        float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
+                        MAi.audioSource.pitch = defaultPitch + randomPitch;
+                        MAi.audioSource.Play();
+                    }
                     MAi.AttackTimer = 0;
                     EnemyProjectile projectile = MAi.SummonProjectile().GetComponent<EnemyProjectile>();
                     projectile.gameObject.transform.position = MAi.gameObject.transform.position;

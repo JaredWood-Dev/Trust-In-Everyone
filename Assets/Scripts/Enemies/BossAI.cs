@@ -22,11 +22,13 @@ public class BossAI : MonoBehaviour
     public int stompDamage;
     public ParticleSystem stompParticles;
     public LayerMask targetLayers;
+    public AudioClip stompSound;
     
     private MoveTo _moveTo;
     private AIPath _aiPath;
     private GameObject _player;
     private Animator _animator;
+    private AudioSource _audioSource;
 
 
     void Start()
@@ -35,6 +37,7 @@ public class BossAI : MonoBehaviour
         _aiPath = GetComponent<AIPath>();
         _player = GameObject.FindWithTag("Player");
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(BossLoop());
     }
@@ -102,6 +105,9 @@ public class BossAI : MonoBehaviour
         yield return new WaitForSeconds(delay);
         
         _animator.SetTrigger("triggerStompEnd");
+        
+        _audioSource.clip = stompSound;
+        _audioSource.Play();
 
         if (stompParticles)
         {

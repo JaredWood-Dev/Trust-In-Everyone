@@ -9,12 +9,14 @@ public class Garf : MonoBehaviour, IAlly
     public int Damage { get; set; }
     public DamageTypes DamageType { get; set; }
     public float AttackSpeed { get; set; }
+    public AudioClip AttackSound;
 
     //Direction to aim the bolt
     [Header("Targeting")]
     public float direction;
     public LayerMask targetLayers;
     public ParticleSystem lightningParticles;
+    private AudioSource _audioSource;
     
     public Attack CharacterAttack { get; set; }
 
@@ -22,6 +24,14 @@ public class Garf : MonoBehaviour, IAlly
     
     public void Attack()
     {
+        if (_audioSource)
+        {
+            _audioSource.clip = AttackSound;
+            float defaultPitch = 1;
+            float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
+            _audioSource.pitch = defaultPitch + randomPitch;
+            _audioSource.Play();
+        }
         //Calculate rotation based on enemies
         GameObject target = GameObjectLocator.FindNearestWithTag(gameObject, "Enemy");
         Vector2 diff = (target.transform.position - transform.position).normalized;
@@ -52,6 +62,7 @@ public class Garf : MonoBehaviour, IAlly
     void Start()
     {
         CharacterAttack = new GarfAttack(gameObject.GetComponent<AlliedAI>());
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
