@@ -1,0 +1,31 @@
+using UnityEngine;
+
+public class EnemySearch : AIState
+{
+    //In enemy search, the enemies slowly wanted toward Coal
+
+    public EnemySearch(EnemyAI ai)
+    {
+        EAi = ai;
+    }
+
+    public EnemySearch()
+    {
+        
+    }
+    
+    public override void Update()
+    {
+        GameObject closestAlly = GameObjectLocator.FindNearestWithTag(EAi.gameObject, "Ally");
+        if (closestAlly)
+        {
+            EAi.moveTo.SetDestination(closestAlly.transform.position);
+            if (Vector3.Distance(EAi.gameObject.transform.position, closestAlly.transform.position) <
+                EAi.aggressionDistance)
+            {
+                EAi.target = closestAlly;
+                EAi.RequestState(States.EnemyFollowing);
+            }
+        }
+    }
+}
