@@ -62,6 +62,7 @@ public class EnemyAI : MonoBehaviour
                 break;
             case States.EnemyStunned:
                 _currentState = new EnemyStun(this);
+                Invoke("EndStun", stunDuration);
                 break;
         }
         _currentState.Enter();
@@ -85,5 +86,10 @@ public class EnemyAI : MonoBehaviour
     private void OnDisable()
     {
         EventManager.OnCreatureHit -= EnemyHit;
+    }
+
+    void EndStun()
+    {
+        RequestState(States.EnemySearching);
     }
 }

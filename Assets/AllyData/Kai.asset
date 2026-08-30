@@ -19,7 +19,7 @@ MonoBehaviour:
   attackName: Flamethrower
   initialDamage: 10
   damageType: 1
-  initialAttackSpeed: 7
+  initialAttackSpeed: 5
   aggressionDistance: 10
   attackDistance: 3
   initialMoveSpeed: 10

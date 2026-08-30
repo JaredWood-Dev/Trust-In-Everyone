@@ -19,7 +19,7 @@ MonoBehaviour:
   attackName: Ice Bolt
   initialDamage: 5
   damageType: 2
-  initialAttackSpeed: 1
+  initialAttackSpeed: 2
   aggressionDistance: 15
   attackDistance: 15
   initialMoveSpeed: 15

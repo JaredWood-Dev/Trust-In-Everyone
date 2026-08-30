@@ -280,12 +280,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee63f3545b4260408a030eb18276960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  health: 500
-  maxHealth: 500
+  health: 750
+  maxHealth: 750
   regen: 5
   hitParticles: {fileID: 1820482852942075590, guid: 5358b4881635e094bbfee303013880f6, type: 3}
   hitFlash: {fileID: -876546973899608171, guid: 6874eb68f72b00c4fb32983b3186cdc4, type: 3}
   DamageResistances: 
+  gameOverButton: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: a0995958c7575e545a76b51dbe3b3ea1, type: 3}
 --- !u!114 &1862906093469153739
 MonoBehaviour:

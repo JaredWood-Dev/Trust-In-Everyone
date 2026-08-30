@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Game Manager
   - Wave Manager
+  - Game Over Button
   layers:
   - Default
   - TransparentFX

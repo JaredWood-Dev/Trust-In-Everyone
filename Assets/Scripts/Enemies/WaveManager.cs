@@ -26,7 +26,7 @@ public class WaveManager : MonoBehaviour
 
     public IEnumerator SpawnWave()
     {
-        currentWaveIndex++;
+        
         if (currentWaveIndex < waves.Length)
         {
 
@@ -41,6 +41,7 @@ public class WaveManager : MonoBehaviour
             }
         }
 
+        currentWaveIndex++;
     }
 
     public void StartWave()
@@ -55,7 +56,7 @@ public class WaveManager : MonoBehaviour
             FindObjectOfType<DialogueManager>().StartDialogue(wave2Dialogue);
         }
         
-        if (currentWaveIndex == 3)
+        if (currentWaveIndex == 4)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(wave5Dialogue);
         }
@@ -74,11 +75,18 @@ public class WaveManager : MonoBehaviour
     public void EnemyKilled(GameObject target, GameObject killer)
     {
         enemyCount--;
-        print("enemies: " + GameObject.FindGameObjectsWithTag("Enemy").Length);
+        print("printing enemeies:");
+        var e = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (var en in e)
+        {
+            print(en.name);
+        }
+        print("end printing enemeis");
         if (GameObject.FindGameObjectsWithTag("Enemy").Length - 1 == 0)
         {
             EventManager.WaveEnd();
         }
+        
     }
 
     void BossDied()
@@ -97,6 +105,7 @@ public class WaveManager : MonoBehaviour
         EventManager.OnEnemyDeath -= EnemyKilled;
         EventManager.OnBossDied -= BossDied;
     }
+
 }
 
 [System.Serializable]

@@ -19,6 +19,8 @@ public class Health : MonoBehaviour
     [SerializeField]
     public List<DamageTypes> DamageResistances = new List<DamageTypes>();
 
+    public GameObject gameOverButton;
+
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
     private Animator _anim;
@@ -51,6 +53,7 @@ public class Health : MonoBehaviour
             health = maxHealth;
         else if (health + changeHealth < 0)
         {
+            health += changeHealth;
             //TODO: REPLACE LATER
             KillCreature();
         }
@@ -131,6 +134,12 @@ public class Health : MonoBehaviour
             gameObject.GetComponent<AlliedAI>().isUnconscious = true;
             gameObject.tag = "Untagged";
             health = 0;
+        }
+
+        if (gameObject.CompareTag("Player"))
+        {
+            //Time.timeScale = 0;
+            gameOverButton.SetActive(true);
         }
         //Destroy(gameObject);
     }

@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -158,7 +159,7 @@ public class GameManager : MonoBehaviour
         if (upgradePoints > 0)
         {
             //linear upgrade
-            party[slot].AllyData.health += 1;
+            party[slot].AllyData.health += 5;
             upgradePoints--;
         }
         
@@ -191,10 +192,16 @@ public class GameManager : MonoBehaviour
     
     public void UpdateAttackSpeed(int slot)
     {
+        //dont let it be zero
+        if (party[slot].AllyData.attackSpeed - 0.2f <= 0.2f)
+        {
+            return;
+        }
+
         if (upgradePoints > 0)
         {
             //linear
-            party[slot].AllyData.attackSpeed -= 0.5f;
+            party[slot].AllyData.attackSpeed -= 0.2f;
             upgradePoints--;
         }
         
@@ -260,6 +267,14 @@ public class GameManager : MonoBehaviour
         {
             upgradeButtons[i].interactable = true;
         }
+    }
+
+    public void ResetGame()
+    {
+        
+        Time.timeScale = 1;
+        SceneManager.LoadScene(3);
+        
     }
     
     void OnEnable()
