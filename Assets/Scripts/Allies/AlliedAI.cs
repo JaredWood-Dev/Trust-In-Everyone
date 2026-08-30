@@ -13,6 +13,7 @@ public class AlliedAI : MonoBehaviour
     public GameObject target;
     public IAlly ally;
     public MoveTo moveTo;
+    public bool isUnconscious;
     
     [NonSerialized]
     public Vector2 destination;
@@ -59,10 +60,12 @@ public class AlliedAI : MonoBehaviour
                 }
                 break;
             case States.Retreating:
-                currentState = new Retreat(this);
+                if (!isUnconscious)
+                    currentState = new Retreat(this);
                 break;
             case States.AttackingPoint:
-                currentState = new Neutral(this);
+                if (!isUnconscious)
+                    currentState = new Neutral(this);
                 break;
             case States.Dead:
                 currentState = new Unconsious(this);

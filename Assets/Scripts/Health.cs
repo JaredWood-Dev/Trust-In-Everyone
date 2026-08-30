@@ -128,6 +128,7 @@ public class Health : MonoBehaviour
         {
             _anim.SetBool("isDead", true);
             gameObject.GetComponent<AlliedAI>().RequestState(States.Dead);
+            gameObject.GetComponent<AlliedAI>().isUnconscious = true;
             gameObject.tag = "Untagged";
             health = 0;
         }
@@ -142,6 +143,7 @@ public class Health : MonoBehaviour
             _anim.SetBool("isDead", false);
         }
 
+        gameObject.GetComponent<AlliedAI>().isUnconscious = false;
         gameObject.tag = "Ally";
     }
 }
