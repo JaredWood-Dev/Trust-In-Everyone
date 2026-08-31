@@ -75,14 +75,7 @@ public class WaveManager : MonoBehaviour
     public void EnemyKilled(GameObject target, GameObject killer)
     {
         enemyCount--;
-        print("printing enemeies:");
-        var e = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (var en in e)
-        {
-            print(en.name);
-        }
-        print("end printing enemeis");
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length - 1 == 0)
+        if (enemyCount < 1)
         {
             EventManager.WaveEnd();
         }
